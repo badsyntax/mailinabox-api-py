@@ -16,11 +16,11 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.system_backup_status_response import (
+import mailinabox_api
+from mailinabox_api.models.system_backup_status_response import (
     SystemBackupStatusResponse,
 )  # noqa: E501
-from mailinaboxapi.rest import ApiException
+from mailinabox_api.rest import ApiException
 
 
 class TestSystemBackupStatusResponse(unittest.TestCase):
@@ -37,11 +37,11 @@ class TestSystemBackupStatusResponse(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.system_backup_status_response.SystemBackupStatusResponse()  # noqa: E501
+        # model = mailinabox_api.models.system_backup_status_response.SystemBackupStatusResponse()  # noqa: E501
         if include_optional:
             return SystemBackupStatusResponse(
                 backups=[
-                    mailinaboxapi.models.system_backup_status.SystemBackupStatus(
+                    mailinabox_api.models.system_backup_status.SystemBackupStatus(
                         date=datetime.datetime.strptime(
                             "2013-10-20 19:20:30.00", "%Y-%m-%d %H:%M:%S.%f"
                         ),

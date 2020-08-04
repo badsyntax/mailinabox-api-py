@@ -16,11 +16,11 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.dns_dump_domain_records import (
+import mailinabox_api
+from mailinabox_api.models.dns_dump_domain_records import (
     DNSDumpDomainRecords,
 )  # noqa: E501
-from mailinaboxapi.rest import ApiException
+from mailinabox_api.rest import ApiException
 
 
 class TestDNSDumpDomainRecords(unittest.TestCase):
@@ -37,7 +37,7 @@ class TestDNSDumpDomainRecords(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.dns_dump_domain_records.DNSDumpDomainRecords()  # noqa: E501
+        # model = mailinabox_api.models.dns_dump_domain_records.DNSDumpDomainRecords()  # noqa: E501
         if include_optional:
             return DNSDumpDomainRecords()
         else:

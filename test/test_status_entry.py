@@ -16,9 +16,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.status_entry import StatusEntry  # noqa: E501
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.models.status_entry import StatusEntry  # noqa: E501
+from mailinabox_api.rest import ApiException
 
 class TestStatusEntry(unittest.TestCase):
     """StatusEntry unit test stubs"""
@@ -34,13 +34,13 @@ class TestStatusEntry(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.status_entry.StatusEntry()  # noqa: E501
+        # model = mailinabox_api.models.status_entry.StatusEntry()  # noqa: E501
         if include_optional :
             return StatusEntry(
                 type = 'warning', 
                 text = 'This domain's DNSSEC DS record is not set', 
                 extra = [
-                    mailinaboxapi.models.status_entry_extra.StatusEntryExtra(
+                    mailinabox_api.models.status_entry_extra.StatusEntryExtra(
                         monospace = False, 
                         text = 'Digest Type: 2 / SHA-256', )
                     ]
@@ -50,7 +50,7 @@ class TestStatusEntry(unittest.TestCase):
                 type = 'warning',
                 text = 'This domain's DNSSEC DS record is not set',
                 extra = [
-                    mailinaboxapi.models.status_entry_extra.StatusEntryExtra(
+                    mailinabox_api.models.status_entry_extra.StatusEntryExtra(
                         monospace = False, 
                         text = 'Digest Type: 2 / SHA-256', )
                     ],

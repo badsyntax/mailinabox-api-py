@@ -1,4 +1,4 @@
-# mailinaboxapi.DNSApi
+# mailinabox_api.DNSApi
 
 All URIs are relative to *https://box.example.com/admin*
 
@@ -33,12 +33,12 @@ Add a custom DNS record.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -48,17 +48,17 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     domain = 'domain_example' # str | DNS record domain
-type = mailinaboxapi.DNSRecordType() # DNSRecordType | Record type
+type = mailinabox_api.DNSRecordType() # DNSRecordType | Record type
 body = 'body_example' # str | The value of the DNS record.
 
     try:
@@ -111,12 +111,12 @@ Add a custom DNS A record.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -126,15 +126,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     domain = 'domain_example' # str | DNS record domain.
 body = 'body_example' # str | The value of the DNS record.
 
@@ -187,12 +187,12 @@ Add secondary nameservers.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -202,15 +202,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     hostnames = 'hostnames_example' # str | Hostnames separated with commas or spaces.
 
     try:
@@ -261,12 +261,12 @@ Retrieve all custom DNS records.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -276,15 +276,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     
     try:
         api_response = api_instance.get_dns_custom_records()
@@ -330,12 +330,12 @@ Get DNS records for domain and type.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -345,17 +345,17 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     domain = 'domain_example' # str | DNS record domain
-type = mailinaboxapi.DNSRecordType() # DNSRecordType | Record type
+type = mailinabox_api.DNSRecordType() # DNSRecordType | Record type
 
     try:
         api_response = api_instance.get_dns_custom_records_for_domain_and_type(domain, type)
@@ -405,12 +405,12 @@ Get DNS A records for domain.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -420,15 +420,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     domain = 'domain_example' # str | DNS record domain.
 
     try:
@@ -478,12 +478,12 @@ Retrieve all DNS records.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -493,15 +493,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     
     try:
         api_response = api_instance.get_dns_dump()
@@ -547,12 +547,12 @@ Retrieve secondary nameservers.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -562,15 +562,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     
     try:
         api_response = api_instance.get_dns_secondary_nameserver()
@@ -616,12 +616,12 @@ Retrieve DNS zones.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -631,15 +631,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     
     try:
         api_response = api_instance.get_dns_zones()
@@ -685,12 +685,12 @@ Remove a custom DNS record.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -700,17 +700,17 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     domain = 'domain_example' # str | DNS record domain
-type = mailinaboxapi.DNSRecordType() # DNSRecordType | Record type
+type = mailinabox_api.DNSRecordType() # DNSRecordType | Record type
 body = 'body_example' # str | The value of the DNS record.
 
     try:
@@ -763,12 +763,12 @@ Remove a custom DNS A record.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -778,15 +778,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     domain = 'domain_example' # str | DNS record domain.
 body = 'body_example' # str | The value of the DNS record.
 
@@ -839,12 +839,12 @@ Update DNS, which involves creating zone files and restarting `nsd`.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -854,15 +854,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     force = 56 # int | Force an update even if mailinabox detects no changes are required.
 
     try:
@@ -913,12 +913,12 @@ Update a custom DNS record.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -928,17 +928,17 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     domain = 'domain_example' # str | DNS record domain
-type = mailinaboxapi.DNSRecordType() # DNSRecordType | Record type
+type = mailinabox_api.DNSRecordType() # DNSRecordType | Record type
 body = 'body_example' # str | The value of the DNS record.
 
     try:
@@ -991,12 +991,12 @@ Update a custom DNS A record.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -1006,15 +1006,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     domain = 'domain_example' # str | DNS record domain.
 body = 'body_example' # str | The value of the DNS record.
 

@@ -16,11 +16,11 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.system_backup_config_response import (
+import mailinabox_api
+from mailinabox_api.models.system_backup_config_response import (
     SystemBackupConfigResponse,
 )  # noqa: E501
-from mailinaboxapi.rest import ApiException
+from mailinabox_api.rest import ApiException
 
 
 class TestSystemBackupConfigResponse(unittest.TestCase):
@@ -37,7 +37,7 @@ class TestSystemBackupConfigResponse(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.system_backup_config_response.SystemBackupConfigResponse()  # noqa: E501
+        # model = mailinabox_api.models.system_backup_config_response.SystemBackupConfigResponse()  # noqa: E501
         if include_optional:
             return SystemBackupConfigResponse(
                 enc_pw_file="/home/user-data/backup/secret_key.txt",

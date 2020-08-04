@@ -1,4 +1,4 @@
-# mailinaboxapi.MailApi
+# mailinabox_api.MailApi
 
 All URIs are relative to *https://box.example.com/admin*
 
@@ -30,12 +30,12 @@ Add a new mail user.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -45,18 +45,18 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
+    api_instance = mailinabox_api.MailApi(api_client)
     email = 'email_example' # str | Email format.
 password = 'password_example' # str | 
-privileges = mailinaboxapi.MailUserPrivilege() # MailUserPrivilege | 
+privileges = mailinabox_api.MailUserPrivilege() # MailUserPrivilege | 
 
     try:
         api_response = api_instance.add_mail_user(email, password, privileges)
@@ -108,12 +108,12 @@ Add a privilege to a mail user.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -123,17 +123,17 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
+    api_instance = mailinabox_api.MailApi(api_client)
     email = 'email_example' # str | Email format.
-privilege = mailinaboxapi.MailUserPrivilege() # MailUserPrivilege | 
+privilege = mailinabox_api.MailUserPrivilege() # MailUserPrivilege | 
 
     try:
         api_response = api_instance.add_mail_user_privilege(email, privilege)
@@ -184,12 +184,12 @@ Retrieve all mail aliases.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -199,16 +199,16 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
-    format = mailinaboxapi.MailAliasesResponseFormat() # MailAliasesResponseFormat | The format of the response. (optional)
+    api_instance = mailinabox_api.MailApi(api_client)
+    format = mailinabox_api.MailAliasesResponseFormat() # MailAliasesResponseFormat | The format of the response. (optional)
 
     try:
         api_response = api_instance.get_mail_aliases(format=format)
@@ -257,12 +257,12 @@ Retrieve all mail domains.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -272,15 +272,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
+    api_instance = mailinabox_api.MailApi(api_client)
     
     try:
         api_response = api_instance.get_mail_domains()
@@ -326,12 +326,12 @@ Retrieve privileges for a user.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -341,15 +341,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
+    api_instance = mailinabox_api.MailApi(api_client)
     email = 'email_example' # str | The email you want to get privileges for. (optional)
 
     try:
@@ -399,12 +399,12 @@ Retrieve all mail users.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -414,16 +414,16 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
-    format = mailinaboxapi.MailUsersResponseFormat() # MailUsersResponseFormat | The format of the response. (optional)
+    api_instance = mailinabox_api.MailApi(api_client)
+    format = mailinabox_api.MailUsersResponseFormat() # MailUsersResponseFormat | The format of the response. (optional)
 
     try:
         api_response = api_instance.get_mail_users(format=format)
@@ -472,12 +472,12 @@ Remove a mail alias.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -487,15 +487,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
+    api_instance = mailinabox_api.MailApi(api_client)
     address = 'address_example' # str | Email format.
 
     try:
@@ -546,12 +546,12 @@ Remove a mail user.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -561,15 +561,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
+    api_instance = mailinabox_api.MailApi(api_client)
     email = 'email_example' # str | Email format.
 
     try:
@@ -620,12 +620,12 @@ Remove a privilege from a mail user.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -635,17 +635,17 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
+    api_instance = mailinabox_api.MailApi(api_client)
     email = 'email_example' # str | Email format.
-privilege = mailinaboxapi.MailUserPrivilege() # MailUserPrivilege | 
+privilege = mailinabox_api.MailUserPrivilege() # MailUserPrivilege | 
 
     try:
         api_response = api_instance.remove_mail_user_privilege(email, privilege)
@@ -696,12 +696,12 @@ Set a password for a user.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -711,15 +711,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
+    api_instance = mailinabox_api.MailApi(api_client)
     email = 'email_example' # str | Email format.
 password = 'password_example' # str | 
 
@@ -772,12 +772,12 @@ Add or update a mail alias. If updating, you need to set `update_if_exists: 1`.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -787,15 +787,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.MailApi(api_client)
+    api_instance = mailinabox_api.MailApi(api_client)
     update_if_exists = 56 # int | Set to `1` when updating an alias.
 address = 'address_example' # str | Email format.
 forwards_to = 'forwards_to_example' # str | If adding a regular or catch-all alias, the format needs to be `email1@example.com`. Multiple address can be separated by newlines or commas.  If adding a domain alias, the format needs to be `@example.com`. 

@@ -16,9 +16,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.dns_zones_response import DNSZonesResponse  # noqa: E501
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.models.dns_zones_response import DNSZonesResponse  # noqa: E501
+from mailinabox_api.rest import ApiException
 
 
 class TestDNSZonesResponse(unittest.TestCase):
@@ -35,7 +35,7 @@ class TestDNSZonesResponse(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.dns_zones_response.DNSZonesResponse()  # noqa: E501
+        # model = mailinabox_api.models.dns_zones_response.DNSZonesResponse()  # noqa: E501
         if include_optional:
             return DNSZonesResponse()
         else:

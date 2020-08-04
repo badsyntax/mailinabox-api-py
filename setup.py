@@ -19,7 +19,7 @@ def get_long_description():
     return (CURRENT_DIR / "README.md").read_text(encoding="utf8")
 
 
-NAME = "mailinaboxapi"
+NAME = "mailinabox-api"
 VERSION = "0.0.3"
 # To install the library, run the following
 #

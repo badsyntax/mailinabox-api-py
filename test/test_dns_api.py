@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import mailinaboxapi
-from mailinaboxapi.api.dns_api import DNSApi  # noqa: E501
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.api.dns_api import DNSApi  # noqa: E501
+from mailinabox_api.rest import ApiException
 
 
 class TestDNSApi(unittest.TestCase):
     """DNSApi unit test stubs"""
 
     def setUp(self):
-        self.api = mailinaboxapi.api.dns_api.DNSApi()  # noqa: E501
+        self.api = mailinabox_api.api.dns_api.DNSApi()  # noqa: E501
 
     def tearDown(self):
         pass

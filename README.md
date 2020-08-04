@@ -1,4 +1,4 @@
-# mailinaboxapi
+# mailinabox-api
 
 [![Build & Publish](https://github.com/badsyntax/mailinabox-api/workflows/Build%20&%20Publish/badge.svg)](https://github.com/badsyntax/mailinabox-api/actions?query=workflow%3A%22Build+%26+Publish%22)
 
@@ -26,7 +26,7 @@ pip install git+https://github.com/badsyntax/mailinabox-api-py.git
 
 Then import the package:
 ```python
-import mailinaboxapi
+import mailinabox_api
 ```
 
 ### Setuptools
@@ -40,7 +40,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import mailinaboxapi
+import mailinabox_api
 ```
 
 ## Getting Started
@@ -51,13 +51,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 from __future__ import print_function
 
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -67,18 +67,18 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.DNSApi(api_client)
+    api_instance = mailinabox_api.DNSApi(api_client)
     domain = 'domain_example' # str | DNS record domain
-    type = mailinaboxapi.DNSRecordType() # DNSRecordType | Record type
+    type = mailinabox_api.DNSRecordType() # DNSRecordType | Record type
     body = 'body_example' # str | The value of the DNS record.
 
     try:

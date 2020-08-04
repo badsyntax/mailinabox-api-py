@@ -16,11 +16,11 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.system_backup_config_update_request import (
+import mailinabox_api
+from mailinabox_api.models.system_backup_config_update_request import (
     SystemBackupConfigUpdateRequest,
 )  # noqa: E501
-from mailinaboxapi.rest import ApiException
+from mailinabox_api.rest import ApiException
 
 
 class TestSystemBackupConfigUpdateRequest(unittest.TestCase):
@@ -37,7 +37,7 @@ class TestSystemBackupConfigUpdateRequest(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.system_backup_config_update_request.SystemBackupConfigUpdateRequest()  # noqa: E501
+        # model = mailinabox_api.models.system_backup_config_update_request.SystemBackupConfigUpdateRequest()  # noqa: E501
         if include_optional:
             return SystemBackupConfigUpdateRequest(
                 target="s3://s3.eu-central-1.amazonaws.com/box-example-com",

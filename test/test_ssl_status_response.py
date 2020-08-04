@@ -16,9 +16,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.ssl_status_response import SSLStatusResponse  # noqa: E501
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.models.ssl_status_response import SSLStatusResponse  # noqa: E501
+from mailinabox_api.rest import ApiException
 
 
 class TestSSLStatusResponse(unittest.TestCase):
@@ -35,12 +35,12 @@ class TestSSLStatusResponse(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.ssl_status_response.SSLStatusResponse()  # noqa: E501
+        # model = mailinabox_api.models.ssl_status_response.SSLStatusResponse()  # noqa: E501
         if include_optional:
             return SSLStatusResponse(
                 can_provision=["0"],
                 status=[
-                    mailinaboxapi.models.ssl_status.SSLStatus(
+                    mailinabox_api.models.ssl_status.SSLStatus(
                         domain="example.com",
                         status="success",
                         text="Signed & valid. The certificate expires in 87 days on 10/28/20.",
@@ -51,7 +51,7 @@ class TestSSLStatusResponse(unittest.TestCase):
             return SSLStatusResponse(
                 can_provision=["0"],
                 status=[
-                    mailinaboxapi.models.ssl_status.SSLStatus(
+                    mailinabox_api.models.ssl_status.SSLStatus(
                         domain="example.com",
                         status="success",
                         text="Signed & valid. The certificate expires in 87 days on 10/28/20.",

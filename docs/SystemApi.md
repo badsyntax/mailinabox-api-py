@@ -1,4 +1,4 @@
-# mailinaboxapi.SystemApi
+# mailinabox_api.SystemApi
 
 All URIs are relative to *https://box.example.com/admin*
 
@@ -31,12 +31,12 @@ Retrieve backup config.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -46,15 +46,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.get_system_backup_config()
@@ -100,12 +100,12 @@ Retrieve backup status.  If the list of backups is empty, this implies no backup
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -115,15 +115,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.get_system_backup_status()
@@ -169,12 +169,12 @@ Retrieve new-version check status.  Response:    - `true`: Private, new-version 
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -184,15 +184,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.get_system_privacy_status()
@@ -238,12 +238,12 @@ Retrieve reboot status.  Response:    - `true`: A reboot is required   - `false`
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -253,15 +253,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.get_system_reboot_status()
@@ -307,12 +307,12 @@ Retrieve system status. Returns an array of statuses which can include headings.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -322,15 +322,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.get_system_status()
@@ -376,12 +376,12 @@ Retrieve system updates.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -391,15 +391,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.get_system_updates()
@@ -445,12 +445,12 @@ Retrieve Mail-in-a-Box upstream version.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -460,15 +460,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.get_system_upstream_version()
@@ -514,12 +514,12 @@ Retrieve installed Mail-in-a-Box version.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -529,15 +529,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.get_system_version()
@@ -583,12 +583,12 @@ Reboot system.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -598,15 +598,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.reboot_system()
@@ -652,12 +652,12 @@ Update backup config.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -667,15 +667,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     target = 'target_example' # str | 
 target_user = 'target_user_example' # str | 
 target_pass = 'target_pass_example' # str | 
@@ -732,12 +732,12 @@ Update system packages.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -747,15 +747,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
+    api_instance = mailinabox_api.SystemApi(api_client)
     
     try:
         api_response = api_instance.update_system_packages()
@@ -801,12 +801,12 @@ Update new-version check status.  Request:    - `value: private`: Disable new ve
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -816,16 +816,16 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.SystemApi(api_client)
-    value = mailinaboxapi.SystemPrivacyStatus() # SystemPrivacyStatus | 
+    api_instance = mailinabox_api.SystemApi(api_client)
+    value = mailinabox_api.SystemPrivacyStatus() # SystemPrivacyStatus | 
 
     try:
         api_response = api_instance.update_system_privacy(value)

@@ -16,11 +16,11 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.mail_users_response_format import (
+import mailinabox_api
+from mailinabox_api.models.mail_users_response_format import (
     MailUsersResponseFormat,
 )  # noqa: E501
-from mailinaboxapi.rest import ApiException
+from mailinabox_api.rest import ApiException
 
 
 class TestMailUsersResponseFormat(unittest.TestCase):
@@ -37,7 +37,7 @@ class TestMailUsersResponseFormat(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.mail_users_response_format.MailUsersResponseFormat()  # noqa: E501
+        # model = mailinabox_api.models.mail_users_response_format.MailUsersResponseFormat()  # noqa: E501
         if include_optional:
             return MailUsersResponseFormat()
         else:

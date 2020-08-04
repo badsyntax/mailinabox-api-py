@@ -16,9 +16,9 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.mail_alias_by_domain import MailAliasByDomain  # noqa: E501
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.models.mail_alias_by_domain import MailAliasByDomain  # noqa: E501
+from mailinabox_api.rest import ApiException
 
 
 class TestMailAliasByDomain(unittest.TestCase):
@@ -35,12 +35,12 @@ class TestMailAliasByDomain(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.mail_alias_by_domain.MailAliasByDomain()  # noqa: E501
+        # model = mailinabox_api.models.mail_alias_by_domain.MailAliasByDomain()  # noqa: E501
         if include_optional:
             return MailAliasByDomain(
                 domain="example.com",
                 aliases=[
-                    mailinaboxapi.models.mail_alias.MailAlias(
+                    mailinabox_api.models.mail_alias.MailAlias(
                         address="user@example.com",
                         address_display="user@example.com",
                         forwards_to=["user@example.com"],
@@ -53,7 +53,7 @@ class TestMailAliasByDomain(unittest.TestCase):
             return MailAliasByDomain(
                 domain="example.com",
                 aliases=[
-                    mailinaboxapi.models.mail_alias.MailAlias(
+                    mailinabox_api.models.mail_alias.MailAlias(
                         address="user@example.com",
                         address_display="user@example.com",
                         forwards_to=["user@example.com"],

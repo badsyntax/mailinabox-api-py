@@ -16,11 +16,11 @@ from __future__ import absolute_import
 import unittest
 import datetime
 
-import mailinaboxapi
-from mailinaboxapi.models.dns_secondary_nameserver_add_request import (
+import mailinabox_api
+from mailinabox_api.models.dns_secondary_nameserver_add_request import (
     DNSSecondaryNameserverAddRequest,
 )  # noqa: E501
-from mailinaboxapi.rest import ApiException
+from mailinabox_api.rest import ApiException
 
 
 class TestDNSSecondaryNameserverAddRequest(unittest.TestCase):
@@ -37,7 +37,7 @@ class TestDNSSecondaryNameserverAddRequest(unittest.TestCase):
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # model = mailinaboxapi.models.dns_secondary_nameserver_add_request.DNSSecondaryNameserverAddRequest()  # noqa: E501
+        # model = mailinabox_api.models.dns_secondary_nameserver_add_request.DNSSecondaryNameserverAddRequest()  # noqa: E501
         if include_optional:
             return DNSSecondaryNameserverAddRequest(
                 hostnames="ns2.hostingcompany.com, ns3.hostingcompany.com"

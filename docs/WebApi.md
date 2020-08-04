@@ -1,4 +1,4 @@
-# mailinaboxapi.WebApi
+# mailinabox_api.WebApi
 
 All URIs are relative to *https://box.example.com/admin*
 
@@ -21,12 +21,12 @@ Retrieve all static web domains.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -36,15 +36,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.WebApi(api_client)
+    api_instance = mailinabox_api.WebApi(api_client)
     
     try:
         api_response = api_instance.get_web_domains()
@@ -90,12 +90,12 @@ Update static websites, used for updating domain root directories.
 ```python
 from __future__ import print_function
 import time
-import mailinaboxapi
-from mailinaboxapi.rest import ApiException
+import mailinabox_api
+from mailinabox_api.rest import ApiException
 from pprint import pprint
 # Defining the host is optional and defaults to https://box.example.com/admin
 # See configuration.py for a list of all supported configuration parameters.
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     host = "https://box.example.com/admin"
 )
 
@@ -105,15 +105,15 @@ configuration = mailinaboxapi.Configuration(
 # satisfies your auth use case.
 
 # Configure HTTP basic authorization: basicAuth
-configuration = mailinaboxapi.Configuration(
+configuration = mailinabox_api.Configuration(
     username = 'YOUR_USERNAME',
     password = 'YOUR_PASSWORD'
 )
 
 # Enter a context with an instance of the API client
-with mailinaboxapi.ApiClient(configuration) as api_client:
+with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = mailinaboxapi.WebApi(api_client)
+    api_instance = mailinabox_api.WebApi(api_client)
     
     try:
         api_response = api_instance.update_web()
