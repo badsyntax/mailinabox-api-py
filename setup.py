@@ -12,9 +12,15 @@
 
 
 from setuptools import setup, find_packages  # noqa: H301
+from pathlib import Path  # noqa E402
+
+
+def get_long_description():
+    return (CURRENT_DIR / "README.md").read_text(encoding="utf8")
+
 
 NAME = "mailinaboxapi"
-VERSION = "0.0.2"
+VERSION = "0.0.3"
 # To install the library, run the following
 #
 # python setup.py install
@@ -36,7 +42,6 @@ setup(
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     license="CC0 1.0 Universal",
-    long_description="""\
-    Python client SDK for the Mail-in-a-Box API  # noqa: E501
-    """,
+    long_description=get_long_description(),
+    long_description_content_type="text/markdown",
 )
