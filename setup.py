@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "mailinaboxapi"
-VERSION = "0.0.0-SNAPSHOT.6"
+VERSION = "0.0.0-SNAPSHOT.7"
 # To install the library, run the following
 #
 # python setup.py install
