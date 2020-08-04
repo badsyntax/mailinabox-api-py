@@ -5,7 +5,7 @@
 Python client SDK for the Mail-in-a-Box API.
 
 - API version: 0.46.0
-- Package version: 0.0.0-SNAPSHOT.5
+- Package version: 0.0.0-SNAPSHOT.6
 
 **NOTE:** This package is auto-generated from the Mail-In-A-Box OpenAPI spec.
 
