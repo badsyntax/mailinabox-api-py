@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.dns_dump_domains import DNSDumpDomains  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestDNSDumpDomains(unittest.TestCase):
     """DNSDumpDomains unit test stubs"""
 
@@ -35,12 +36,10 @@ class TestDNSDumpDomains(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.dns_dump_domains.DNSDumpDomains()  # noqa: E501
-        if include_optional :
-            return DNSDumpDomains(
-            )
-        else :
-            return DNSDumpDomains(
-        )
+        if include_optional:
+            return DNSDumpDomains()
+        else:
+            return DNSDumpDomains()
 
     def testDNSDumpDomains(self):
         """Test DNSDumpDomains"""
@@ -48,5 +47,5 @@ class TestDNSDumpDomains(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

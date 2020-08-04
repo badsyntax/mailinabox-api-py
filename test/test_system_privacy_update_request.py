@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.system_privacy_update_request import SystemPrivacyUpdateRequest  # noqa: E501
+from mailinaboxapi.models.system_privacy_update_request import (
+    SystemPrivacyUpdateRequest,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestSystemPrivacyUpdateRequest(unittest.TestCase):
     """SystemPrivacyUpdateRequest unit test stubs"""
@@ -35,14 +38,10 @@ class TestSystemPrivacyUpdateRequest(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.system_privacy_update_request.SystemPrivacyUpdateRequest()  # noqa: E501
-        if include_optional :
-            return SystemPrivacyUpdateRequest(
-                value = 'private'
-            )
-        else :
-            return SystemPrivacyUpdateRequest(
-                value = 'private',
-        )
+        if include_optional:
+            return SystemPrivacyUpdateRequest(value="private")
+        else:
+            return SystemPrivacyUpdateRequest(value="private",)
 
     def testSystemPrivacyUpdateRequest(self):
         """Test SystemPrivacyUpdateRequest"""
@@ -50,5 +49,5 @@ class TestSystemPrivacyUpdateRequest(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

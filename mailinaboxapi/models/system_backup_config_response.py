@@ -34,26 +34,36 @@ class SystemBackupConfigResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'enc_pw_file': 'str',
-        'file_target_directory': 'str',
-        'min_age_in_days': 'int',
-        'ssh_pub_key': 'str',
-        'target': 'str',
-        'target_user': 'str',
-        'target_pass': 'str'
+        "enc_pw_file": "str",
+        "file_target_directory": "str",
+        "min_age_in_days": "int",
+        "ssh_pub_key": "str",
+        "target": "str",
+        "target_user": "str",
+        "target_pass": "str",
     }
 
     attribute_map = {
-        'enc_pw_file': 'enc_pw_file',
-        'file_target_directory': 'file_target_directory',
-        'min_age_in_days': 'min_age_in_days',
-        'ssh_pub_key': 'ssh_pub_key',
-        'target': 'target',
-        'target_user': 'target_user',
-        'target_pass': 'target_pass'
+        "enc_pw_file": "enc_pw_file",
+        "file_target_directory": "file_target_directory",
+        "min_age_in_days": "min_age_in_days",
+        "ssh_pub_key": "ssh_pub_key",
+        "target": "target",
+        "target_user": "target_user",
+        "target_pass": "target_pass",
     }
 
-    def __init__(self, enc_pw_file=None, file_target_directory=None, min_age_in_days=None, ssh_pub_key=None, target=None, target_user=None, target_pass=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        enc_pw_file=None,
+        file_target_directory=None,
+        min_age_in_days=None,
+        ssh_pub_key=None,
+        target=None,
+        target_user=None,
+        target_pass=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
         """SystemBackupConfigResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,8 +106,12 @@ class SystemBackupConfigResponse(object):
         :param enc_pw_file: The enc_pw_file of this SystemBackupConfigResponse.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and enc_pw_file is None:  # noqa: E501
-            raise ValueError("Invalid value for `enc_pw_file`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and enc_pw_file is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `enc_pw_file`, must not be `None`"
+            )  # noqa: E501
 
         self._enc_pw_file = enc_pw_file
 
@@ -119,8 +133,13 @@ class SystemBackupConfigResponse(object):
         :param file_target_directory: The file_target_directory of this SystemBackupConfigResponse.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and file_target_directory is None:  # noqa: E501
-            raise ValueError("Invalid value for `file_target_directory`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and file_target_directory is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `file_target_directory`, must not be `None`"
+            )  # noqa: E501
 
         self._file_target_directory = file_target_directory
 
@@ -142,11 +161,21 @@ class SystemBackupConfigResponse(object):
         :param min_age_in_days: The min_age_in_days of this SystemBackupConfigResponse.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and min_age_in_days is None:  # noqa: E501
-            raise ValueError("Invalid value for `min_age_in_days`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                min_age_in_days is not None and min_age_in_days < 1):  # noqa: E501
-            raise ValueError("Invalid value for `min_age_in_days`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and min_age_in_days is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `min_age_in_days`, must not be `None`"
+            )  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and min_age_in_days is not None
+            and min_age_in_days < 1
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `min_age_in_days`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
 
         self._min_age_in_days = min_age_in_days
 
@@ -168,8 +197,12 @@ class SystemBackupConfigResponse(object):
         :param ssh_pub_key: The ssh_pub_key of this SystemBackupConfigResponse.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and ssh_pub_key is None:  # noqa: E501
-            raise ValueError("Invalid value for `ssh_pub_key`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and ssh_pub_key is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `ssh_pub_key`, must not be `None`"
+            )  # noqa: E501
 
         self._ssh_pub_key = ssh_pub_key
 
@@ -191,8 +224,12 @@ class SystemBackupConfigResponse(object):
         :param target: The target of this SystemBackupConfigResponse.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and target is None:  # noqa: E501
-            raise ValueError("Invalid value for `target`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and target is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `target`, must not be `None`"
+            )  # noqa: E501
 
         self._target = target
 
@@ -245,18 +282,20 @@ class SystemBackupConfigResponse(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

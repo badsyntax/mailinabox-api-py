@@ -34,20 +34,27 @@ class SystemBackupConfigUpdateRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'target': 'str',
-        'target_user': 'str',
-        'target_pass': 'str',
-        'min_age': 'int'
+        "target": "str",
+        "target_user": "str",
+        "target_pass": "str",
+        "min_age": "int",
     }
 
     attribute_map = {
-        'target': 'target',
-        'target_user': 'target_user',
-        'target_pass': 'target_pass',
-        'min_age': 'min_age'
+        "target": "target",
+        "target_user": "target_user",
+        "target_pass": "target_pass",
+        "min_age": "min_age",
     }
 
-    def __init__(self, target=None, target_user=None, target_pass=None, min_age=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        target=None,
+        target_user=None,
+        target_pass=None,
+        min_age=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
         """SystemBackupConfigUpdateRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,8 +89,12 @@ class SystemBackupConfigUpdateRequest(object):
         :param target: The target of this SystemBackupConfigUpdateRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and target is None:  # noqa: E501
-            raise ValueError("Invalid value for `target`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and target is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `target`, must not be `None`"
+            )  # noqa: E501
 
         self._target = target
 
@@ -105,8 +116,12 @@ class SystemBackupConfigUpdateRequest(object):
         :param target_user: The target_user of this SystemBackupConfigUpdateRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and target_user is None:  # noqa: E501
-            raise ValueError("Invalid value for `target_user`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and target_user is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `target_user`, must not be `None`"
+            )  # noqa: E501
 
         self._target_user = target_user
 
@@ -128,8 +143,12 @@ class SystemBackupConfigUpdateRequest(object):
         :param target_pass: The target_pass of this SystemBackupConfigUpdateRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and target_pass is None:  # noqa: E501
-            raise ValueError("Invalid value for `target_pass`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and target_pass is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `target_pass`, must not be `None`"
+            )  # noqa: E501
 
         self._target_pass = target_pass
 
@@ -151,11 +170,20 @@ class SystemBackupConfigUpdateRequest(object):
         :param min_age: The min_age of this SystemBackupConfigUpdateRequest.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and min_age is None:  # noqa: E501
-            raise ValueError("Invalid value for `min_age`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                min_age is not None and min_age < 1):  # noqa: E501
-            raise ValueError("Invalid value for `min_age`, must be a value greater than or equal to `1`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and min_age is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `min_age`, must not be `None`"
+            )  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and min_age is not None
+            and min_age < 1
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `min_age`, must be a value greater than or equal to `1`"
+            )  # noqa: E501
 
         self._min_age = min_age
 
@@ -166,18 +194,20 @@ class SystemBackupConfigUpdateRequest(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

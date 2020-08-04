@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.mail_user_status import MailUserStatus  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestMailUserStatus(unittest.TestCase):
     """MailUserStatus unit test stubs"""
 
@@ -35,12 +36,10 @@ class TestMailUserStatus(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_user_status.MailUserStatus()  # noqa: E501
-        if include_optional :
-            return MailUserStatus(
-            )
-        else :
-            return MailUserStatus(
-        )
+        if include_optional:
+            return MailUserStatus()
+        else:
+            return MailUserStatus()
 
     def testMailUserStatus(self):
         """Test MailUserStatus"""
@@ -48,5 +47,5 @@ class TestMailUserStatus(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

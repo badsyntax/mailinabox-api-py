@@ -34,26 +34,36 @@ class SystemBackupStatus(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'date': 'datetime',
-        'date_delta': 'str',
-        'date_str': 'str',
-        'deleted_in': 'str',
-        'full': 'bool',
-        'size': 'int',
-        'volumes': 'int'
+        "date": "datetime",
+        "date_delta": "str",
+        "date_str": "str",
+        "deleted_in": "str",
+        "full": "bool",
+        "size": "int",
+        "volumes": "int",
     }
 
     attribute_map = {
-        'date': 'date',
-        'date_delta': 'date_delta',
-        'date_str': 'date_str',
-        'deleted_in': 'deleted_in',
-        'full': 'full',
-        'size': 'size',
-        'volumes': 'volumes'
+        "date": "date",
+        "date_delta": "date_delta",
+        "date_str": "date_str",
+        "deleted_in": "deleted_in",
+        "full": "full",
+        "size": "size",
+        "volumes": "volumes",
     }
 
-    def __init__(self, date=None, date_delta=None, date_str=None, deleted_in=None, full=None, size=None, volumes=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        date=None,
+        date_delta=None,
+        date_str=None,
+        deleted_in=None,
+        full=None,
+        size=None,
+        volumes=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
         """SystemBackupStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,8 +105,12 @@ class SystemBackupStatus(object):
         :param date: The date of this SystemBackupStatus.  # noqa: E501
         :type: datetime
         """
-        if self.local_vars_configuration.client_side_validation and date is None:  # noqa: E501
-            raise ValueError("Invalid value for `date`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and date is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `date`, must not be `None`"
+            )  # noqa: E501
 
         self._date = date
 
@@ -118,8 +132,12 @@ class SystemBackupStatus(object):
         :param date_delta: The date_delta of this SystemBackupStatus.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and date_delta is None:  # noqa: E501
-            raise ValueError("Invalid value for `date_delta`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and date_delta is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `date_delta`, must not be `None`"
+            )  # noqa: E501
 
         self._date_delta = date_delta
 
@@ -141,8 +159,12 @@ class SystemBackupStatus(object):
         :param date_str: The date_str of this SystemBackupStatus.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and date_str is None:  # noqa: E501
-            raise ValueError("Invalid value for `date_str`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and date_str is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `date_str`, must not be `None`"
+            )  # noqa: E501
 
         self._date_str = date_str
 
@@ -185,8 +207,12 @@ class SystemBackupStatus(object):
         :param full: The full of this SystemBackupStatus.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and full is None:  # noqa: E501
-            raise ValueError("Invalid value for `full`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and full is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `full`, must not be `None`"
+            )  # noqa: E501
 
         self._full = full
 
@@ -208,8 +234,12 @@ class SystemBackupStatus(object):
         :param size: The size of this SystemBackupStatus.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and size is None:  # noqa: E501
-            raise ValueError("Invalid value for `size`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and size is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `size`, must not be `None`"
+            )  # noqa: E501
 
         self._size = size
 
@@ -231,8 +261,12 @@ class SystemBackupStatus(object):
         :param volumes: The volumes of this SystemBackupStatus.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and volumes is None:  # noqa: E501
-            raise ValueError("Invalid value for `volumes`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and volumes is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `volumes`, must not be `None`"
+            )  # noqa: E501
 
         self._volumes = volumes
 
@@ -243,18 +277,20 @@ class SystemBackupStatus(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

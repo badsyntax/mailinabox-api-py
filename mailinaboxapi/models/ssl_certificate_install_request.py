@@ -33,19 +33,13 @@ class SSLCertificateInstallRequest(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {
-        'domain': 'str',
-        'cert': 'str',
-        'chain': 'str'
-    }
+    openapi_types = {"domain": "str", "cert": "str", "chain": "str"}
 
-    attribute_map = {
-        'domain': 'domain',
-        'cert': 'cert',
-        'chain': 'chain'
-    }
+    attribute_map = {"domain": "domain", "cert": "cert", "chain": "chain"}
 
-    def __init__(self, domain=None, cert=None, chain=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self, domain=None, cert=None, chain=None, local_vars_configuration=None
+    ):  # noqa: E501
         """SSLCertificateInstallRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,8 +74,12 @@ class SSLCertificateInstallRequest(object):
         :param domain: The domain of this SSLCertificateInstallRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and domain is None:  # noqa: E501
-            raise ValueError("Invalid value for `domain`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and domain is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `domain`, must not be `None`"
+            )  # noqa: E501
 
         self._domain = domain
 
@@ -105,8 +103,12 @@ class SSLCertificateInstallRequest(object):
         :param cert: The cert of this SSLCertificateInstallRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and cert is None:  # noqa: E501
-            raise ValueError("Invalid value for `cert`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and cert is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `cert`, must not be `None`"
+            )  # noqa: E501
 
         self._cert = cert
 
@@ -130,8 +132,12 @@ class SSLCertificateInstallRequest(object):
         :param chain: The chain of this SSLCertificateInstallRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and chain is None:  # noqa: E501
-            raise ValueError("Invalid value for `chain`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and chain is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `chain`, must not be `None`"
+            )  # noqa: E501
 
         self._chain = chain
 
@@ -142,18 +148,20 @@ class SSLCertificateInstallRequest(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

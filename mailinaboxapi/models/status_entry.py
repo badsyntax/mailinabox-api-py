@@ -34,18 +34,16 @@ class StatusEntry(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'type': 'StatusEntryType',
-        'text': 'str',
-        'extra': 'list[StatusEntryExtra]'
+        "type": "StatusEntryType",
+        "text": "str",
+        "extra": "list[StatusEntryExtra]",
     }
 
-    attribute_map = {
-        'type': 'type',
-        'text': 'text',
-        'extra': 'extra'
-    }
+    attribute_map = {"type": "type", "text": "text", "extra": "extra"}
 
-    def __init__(self, type=None, text=None, extra=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self, type=None, text=None, extra=None, local_vars_configuration=None
+    ):  # noqa: E501
         """StatusEntry - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,8 +76,12 @@ class StatusEntry(object):
         :param type: The type of this StatusEntry.  # noqa: E501
         :type: StatusEntryType
         """
-        if self.local_vars_configuration.client_side_validation and type is None:  # noqa: E501
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and type is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `type`, must not be `None`"
+            )  # noqa: E501
 
         self._type = type
 
@@ -101,8 +103,12 @@ class StatusEntry(object):
         :param text: The text of this StatusEntry.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and text is None:  # noqa: E501
-            raise ValueError("Invalid value for `text`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and text is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `text`, must not be `None`"
+            )  # noqa: E501
 
         self._text = text
 
@@ -124,8 +130,12 @@ class StatusEntry(object):
         :param extra: The extra of this StatusEntry.  # noqa: E501
         :type: list[StatusEntryExtra]
         """
-        if self.local_vars_configuration.client_side_validation and extra is None:  # noqa: E501
-            raise ValueError("Invalid value for `extra`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and extra is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `extra`, must not be `None`"
+            )  # noqa: E501
 
         self._extra = extra
 
@@ -136,18 +146,20 @@ class StatusEntry(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

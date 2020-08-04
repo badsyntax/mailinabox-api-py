@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.dns_custom_record import DNSCustomRecord  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestDNSCustomRecord(unittest.TestCase):
     """DNSCustomRecord unit test stubs"""
 
@@ -35,18 +36,14 @@ class TestDNSCustomRecord(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.dns_custom_record.DNSCustomRecord()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return DNSCustomRecord(
-                qname = 'example.com', 
-                rtype = 'MX', 
-                value = '10 example.com.'
+                qname="example.com", rtype="MX", value="10 example.com."
             )
-        else :
+        else:
             return DNSCustomRecord(
-                qname = 'example.com',
-                rtype = 'MX',
-                value = '10 example.com.',
-        )
+                qname="example.com", rtype="MX", value="10 example.com.",
+            )
 
     def testDNSCustomRecord(self):
         """Test DNSCustomRecord"""
@@ -54,5 +51,5 @@ class TestDNSCustomRecord(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

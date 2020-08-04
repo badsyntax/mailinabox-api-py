@@ -33,19 +33,13 @@ class SSLCertificatesProvisionResponseRequests(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {
-        'log': 'list[str]',
-        'result': 'str',
-        'domains': 'list[str]'
-    }
+    openapi_types = {"log": "list[str]", "result": "str", "domains": "list[str]"}
 
-    attribute_map = {
-        'log': 'log',
-        'result': 'result',
-        'domains': 'domains'
-    }
+    attribute_map = {"log": "log", "result": "result", "domains": "domains"}
 
-    def __init__(self, log=None, result=None, domains=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self, log=None, result=None, domains=None, local_vars_configuration=None
+    ):  # noqa: E501
         """SSLCertificatesProvisionResponseRequests - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,8 +72,12 @@ class SSLCertificatesProvisionResponseRequests(object):
         :param log: The log of this SSLCertificatesProvisionResponseRequests.  # noqa: E501
         :type: list[str]
         """
-        if self.local_vars_configuration.client_side_validation and log is None:  # noqa: E501
-            raise ValueError("Invalid value for `log`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and log is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `log`, must not be `None`"
+            )  # noqa: E501
 
         self._log = log
 
@@ -101,13 +99,21 @@ class SSLCertificatesProvisionResponseRequests(object):
         :param result: The result of this SSLCertificatesProvisionResponseRequests.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and result is None:  # noqa: E501
-            raise ValueError("Invalid value for `result`, must not be `None`")  # noqa: E501
-        allowed_values = ["installed", "error", "skipped"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and result not in allowed_values:  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and result is None
+        ):  # noqa: E501
             raise ValueError(
-                "Invalid value for `result` ({0}), must be one of {1}"  # noqa: E501
-                .format(result, allowed_values)
+                "Invalid value for `result`, must not be `None`"
+            )  # noqa: E501
+        allowed_values = ["installed", "error", "skipped"]  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and result not in allowed_values
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `result` ({0}), must be one of {1}".format(  # noqa: E501
+                    result, allowed_values
+                )
             )
 
         self._result = result
@@ -130,8 +136,12 @@ class SSLCertificatesProvisionResponseRequests(object):
         :param domains: The domains of this SSLCertificatesProvisionResponseRequests.  # noqa: E501
         :type: list[str]
         """
-        if self.local_vars_configuration.client_side_validation and domains is None:  # noqa: E501
-            raise ValueError("Invalid value for `domains`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and domains is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `domains`, must not be `None`"
+            )  # noqa: E501
 
         self._domains = domains
 
@@ -142,18 +152,20 @@ class SSLCertificatesProvisionResponseRequests(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

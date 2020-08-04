@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.dns_secondary_nameserver_add_request import DNSSecondaryNameserverAddRequest  # noqa: E501
+from mailinaboxapi.models.dns_secondary_nameserver_add_request import (
+    DNSSecondaryNameserverAddRequest,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestDNSSecondaryNameserverAddRequest(unittest.TestCase):
     """DNSSecondaryNameserverAddRequest unit test stubs"""
@@ -35,14 +38,14 @@ class TestDNSSecondaryNameserverAddRequest(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.dns_secondary_nameserver_add_request.DNSSecondaryNameserverAddRequest()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return DNSSecondaryNameserverAddRequest(
-                hostnames = 'ns2.hostingcompany.com, ns3.hostingcompany.com'
+                hostnames="ns2.hostingcompany.com, ns3.hostingcompany.com"
             )
-        else :
+        else:
             return DNSSecondaryNameserverAddRequest(
-                hostnames = 'ns2.hostingcompany.com, ns3.hostingcompany.com',
-        )
+                hostnames="ns2.hostingcompany.com, ns3.hostingcompany.com",
+            )
 
     def testDNSSecondaryNameserverAddRequest(self):
         """Test DNSSecondaryNameserverAddRequest"""
@@ -50,5 +53,5 @@ class TestDNSSecondaryNameserverAddRequest(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

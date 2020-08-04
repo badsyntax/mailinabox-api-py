@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.mail_users_response import MailUsersResponse  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestMailUsersResponse(unittest.TestCase):
     """MailUsersResponse unit test stubs"""
 
@@ -35,12 +36,10 @@ class TestMailUsersResponse(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_users_response.MailUsersResponse()  # noqa: E501
-        if include_optional :
-            return MailUsersResponse(
-            )
-        else :
-            return MailUsersResponse(
-        )
+        if include_optional:
+            return MailUsersResponse()
+        else:
+            return MailUsersResponse()
 
     def testMailUsersResponse(self):
         """Test MailUsersResponse"""
@@ -48,5 +47,5 @@ class TestMailUsersResponse(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

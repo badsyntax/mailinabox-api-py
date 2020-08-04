@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.mail_user_set_password_request import MailUserSetPasswordRequest  # noqa: E501
+from mailinaboxapi.models.mail_user_set_password_request import (
+    MailUserSetPasswordRequest,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestMailUserSetPasswordRequest(unittest.TestCase):
     """MailUserSetPasswordRequest unit test stubs"""
@@ -35,16 +38,10 @@ class TestMailUserSetPasswordRequest(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_user_set_password_request.MailUserSetPasswordRequest()  # noqa: E501
-        if include_optional :
-            return MailUserSetPasswordRequest(
-                email = 'user@example.com', 
-                password = '0'
-            )
-        else :
-            return MailUserSetPasswordRequest(
-                email = 'user@example.com',
-                password = '0',
-        )
+        if include_optional:
+            return MailUserSetPasswordRequest(email="user@example.com", password="0")
+        else:
+            return MailUserSetPasswordRequest(email="user@example.com", password="0",)
 
     def testMailUserSetPasswordRequest(self):
         """Test MailUserSetPasswordRequest"""
@@ -52,5 +49,5 @@ class TestMailUserSetPasswordRequest(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

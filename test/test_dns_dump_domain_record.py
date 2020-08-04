@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.dns_dump_domain_record import DNSDumpDomainRecord  # noqa: E501
+from mailinaboxapi.models.dns_dump_domain_record import (
+    DNSDumpDomainRecord,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestDNSDumpDomainRecord(unittest.TestCase):
     """DNSDumpDomainRecord unit test stubs"""
@@ -35,19 +38,19 @@ class TestDNSDumpDomainRecord(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.dns_dump_domain_record.DNSDumpDomainRecord()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return DNSDumpDomainRecord(
-                explanation = 'Required. Specifies the hostname (and priority) of the machine that handles @example.com mail', 
-                qname = 'example.com', 
-                rtype = 'MX', 
-                value = '10 example.com.'
+                explanation="Required. Specifies the hostname (and priority) of the machine that handles @example.com mail",
+                qname="example.com",
+                rtype="MX",
+                value="10 example.com.",
             )
-        else :
+        else:
             return DNSDumpDomainRecord(
-                explanation = 'Required. Specifies the hostname (and priority) of the machine that handles @example.com mail',
-                qname = 'example.com',
-                value = '10 example.com.',
-        )
+                explanation="Required. Specifies the hostname (and priority) of the machine that handles @example.com mail",
+                qname="example.com",
+                value="10 example.com.",
+            )
 
     def testDNSDumpDomainRecord(self):
         """Test DNSDumpDomainRecord"""
@@ -55,5 +58,5 @@ class TestDNSDumpDomainRecord(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

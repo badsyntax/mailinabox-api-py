@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.system_backup_config_update_request import SystemBackupConfigUpdateRequest  # noqa: E501
+from mailinaboxapi.models.system_backup_config_update_request import (
+    SystemBackupConfigUpdateRequest,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestSystemBackupConfigUpdateRequest(unittest.TestCase):
     """SystemBackupConfigUpdateRequest unit test stubs"""
@@ -35,20 +38,20 @@ class TestSystemBackupConfigUpdateRequest(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.system_backup_config_update_request.SystemBackupConfigUpdateRequest()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return SystemBackupConfigUpdateRequest(
-                target = 's3://s3.eu-central-1.amazonaws.com/box-example-com', 
-                target_user = 'username', 
-                target_pass = 'password', 
-                min_age = 3
+                target="s3://s3.eu-central-1.amazonaws.com/box-example-com",
+                target_user="username",
+                target_pass="password",
+                min_age=3,
             )
-        else :
+        else:
             return SystemBackupConfigUpdateRequest(
-                target = 's3://s3.eu-central-1.amazonaws.com/box-example-com',
-                target_user = 'username',
-                target_pass = 'password',
-                min_age = 3,
-        )
+                target="s3://s3.eu-central-1.amazonaws.com/box-example-com",
+                target_user="username",
+                target_pass="password",
+                min_age=3,
+            )
 
     def testSystemBackupConfigUpdateRequest(self):
         """Test SystemBackupConfigUpdateRequest"""
@@ -56,5 +59,5 @@ class TestSystemBackupConfigUpdateRequest(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

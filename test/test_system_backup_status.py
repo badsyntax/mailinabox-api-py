@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.system_backup_status import SystemBackupStatus  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestSystemBackupStatus(unittest.TestCase):
     """SystemBackupStatus unit test stubs"""
 
@@ -35,25 +36,29 @@ class TestSystemBackupStatus(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.system_backup_status.SystemBackupStatus()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return SystemBackupStatus(
-                date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                date_delta = '15 hours, 40 minutes', 
-                date_str = '2020-08-01 03:37:06 BST', 
-                deleted_in = 'approx. 6 days', 
-                full = False, 
-                size = 125332, 
-                volumes = 1
+                date=datetime.datetime.strptime(
+                    "2013-10-20 19:20:30.00", "%Y-%m-%d %H:%M:%S.%f"
+                ),
+                date_delta="15 hours, 40 minutes",
+                date_str="2020-08-01 03:37:06 BST",
+                deleted_in="approx. 6 days",
+                full=False,
+                size=125332,
+                volumes=1,
             )
-        else :
+        else:
             return SystemBackupStatus(
-                date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                date_delta = '15 hours, 40 minutes',
-                date_str = '2020-08-01 03:37:06 BST',
-                full = False,
-                size = 125332,
-                volumes = 1,
-        )
+                date=datetime.datetime.strptime(
+                    "2013-10-20 19:20:30.00", "%Y-%m-%d %H:%M:%S.%f"
+                ),
+                date_delta="15 hours, 40 minutes",
+                date_str="2020-08-01 03:37:06 BST",
+                full=False,
+                size=125332,
+                volumes=1,
+            )
 
     def testSystemBackupStatus(self):
         """Test SystemBackupStatus"""
@@ -61,5 +66,5 @@ class TestSystemBackupStatus(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

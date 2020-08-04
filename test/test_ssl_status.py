@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.ssl_status import SSLStatus  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestSSLStatus(unittest.TestCase):
     """SSLStatus unit test stubs"""
 
@@ -35,18 +36,18 @@ class TestSSLStatus(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.ssl_status.SSLStatus()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return SSLStatus(
-                domain = 'example.com', 
-                status = 'success', 
-                text = 'Signed & valid. The certificate expires in 87 days on 10/28/20.'
+                domain="example.com",
+                status="success",
+                text="Signed & valid. The certificate expires in 87 days on 10/28/20.",
             )
-        else :
+        else:
             return SSLStatus(
-                domain = 'example.com',
-                status = 'success',
-                text = 'Signed & valid. The certificate expires in 87 days on 10/28/20.',
-        )
+                domain="example.com",
+                status="success",
+                text="Signed & valid. The certificate expires in 87 days on 10/28/20.",
+            )
 
     def testSSLStatus(self):
         """Test SSLStatus"""
@@ -54,5 +55,5 @@ class TestSSLStatus(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

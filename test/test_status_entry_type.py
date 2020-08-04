@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.status_entry_type import StatusEntryType  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestStatusEntryType(unittest.TestCase):
     """StatusEntryType unit test stubs"""
 
@@ -35,12 +36,10 @@ class TestStatusEntryType(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.status_entry_type.StatusEntryType()  # noqa: E501
-        if include_optional :
-            return StatusEntryType(
-            )
-        else :
-            return StatusEntryType(
-        )
+        if include_optional:
+            return StatusEntryType()
+        else:
+            return StatusEntryType()
 
     def testStatusEntryType(self):
         """Test StatusEntryType"""
@@ -48,5 +47,5 @@ class TestStatusEntryType(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

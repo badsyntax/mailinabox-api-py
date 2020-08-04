@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.mail_aliases_response_format import MailAliasesResponseFormat  # noqa: E501
+from mailinaboxapi.models.mail_aliases_response_format import (
+    MailAliasesResponseFormat,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestMailAliasesResponseFormat(unittest.TestCase):
     """MailAliasesResponseFormat unit test stubs"""
@@ -35,12 +38,10 @@ class TestMailAliasesResponseFormat(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_aliases_response_format.MailAliasesResponseFormat()  # noqa: E501
-        if include_optional :
-            return MailAliasesResponseFormat(
-            )
-        else :
-            return MailAliasesResponseFormat(
-        )
+        if include_optional:
+            return MailAliasesResponseFormat()
+        else:
+            return MailAliasesResponseFormat()
 
     def testMailAliasesResponseFormat(self):
         """Test MailAliasesResponseFormat"""
@@ -48,5 +49,5 @@ class TestMailAliasesResponseFormat(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

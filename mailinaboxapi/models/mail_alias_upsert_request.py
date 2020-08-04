@@ -34,20 +34,27 @@ class MailAliasUpsertRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'update_if_exists': 'int',
-        'address': 'str',
-        'forwards_to': 'str',
-        'permitted_senders': 'str'
+        "update_if_exists": "int",
+        "address": "str",
+        "forwards_to": "str",
+        "permitted_senders": "str",
     }
 
     attribute_map = {
-        'update_if_exists': 'update_if_exists',
-        'address': 'address',
-        'forwards_to': 'forwards_to',
-        'permitted_senders': 'permitted_senders'
+        "update_if_exists": "update_if_exists",
+        "address": "address",
+        "forwards_to": "forwards_to",
+        "permitted_senders": "permitted_senders",
     }
 
-    def __init__(self, update_if_exists=None, address=None, forwards_to=None, permitted_senders=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        update_if_exists=None,
+        address=None,
+        forwards_to=None,
+        permitted_senders=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
         """MailAliasUpsertRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,14 +91,29 @@ class MailAliasUpsertRequest(object):
         :param update_if_exists: The update_if_exists of this MailAliasUpsertRequest.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and update_if_exists is None:  # noqa: E501
-            raise ValueError("Invalid value for `update_if_exists`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                update_if_exists is not None and update_if_exists > 1):  # noqa: E501
-            raise ValueError("Invalid value for `update_if_exists`, must be a value less than or equal to `1`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                update_if_exists is not None and update_if_exists < 0):  # noqa: E501
-            raise ValueError("Invalid value for `update_if_exists`, must be a value greater than or equal to `0`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and update_if_exists is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `update_if_exists`, must not be `None`"
+            )  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and update_if_exists is not None
+            and update_if_exists > 1
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `update_if_exists`, must be a value less than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and update_if_exists is not None
+            and update_if_exists < 0
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `update_if_exists`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
 
         self._update_if_exists = update_if_exists
 
@@ -115,8 +137,12 @@ class MailAliasUpsertRequest(object):
         :param address: The address of this MailAliasUpsertRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and address is None:  # noqa: E501
-            raise ValueError("Invalid value for `address`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and address is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `address`, must not be `None`"
+            )  # noqa: E501
 
         self._address = address
 
@@ -140,8 +166,12 @@ class MailAliasUpsertRequest(object):
         :param forwards_to: The forwards_to of this MailAliasUpsertRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and forwards_to is None:  # noqa: E501
-            raise ValueError("Invalid value for `forwards_to`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and forwards_to is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `forwards_to`, must not be `None`"
+            )  # noqa: E501
 
         self._forwards_to = forwards_to
 
@@ -175,18 +205,20 @@ class MailAliasUpsertRequest(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

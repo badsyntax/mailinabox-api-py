@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.mail_alias_by_domain import MailAliasByDomain  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestMailAliasByDomain(unittest.TestCase):
     """MailAliasByDomain unit test stubs"""
 
@@ -35,38 +36,32 @@ class TestMailAliasByDomain(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_alias_by_domain.MailAliasByDomain()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return MailAliasByDomain(
-                domain = 'example.com', 
-                aliases = [
+                domain="example.com",
+                aliases=[
                     mailinaboxapi.models.mail_alias.MailAlias(
-                        address = 'user@example.com', 
-                        address_display = 'user@example.com', 
-                        forwards_to = [
-                            'user@example.com'
-                            ], 
-                        permitted_senders = [
-                            'user@example.com'
-                            ], 
-                        required = True, )
-                    ]
+                        address="user@example.com",
+                        address_display="user@example.com",
+                        forwards_to=["user@example.com"],
+                        permitted_senders=["user@example.com"],
+                        required=True,
+                    )
+                ],
             )
-        else :
+        else:
             return MailAliasByDomain(
-                domain = 'example.com',
-                aliases = [
+                domain="example.com",
+                aliases=[
                     mailinaboxapi.models.mail_alias.MailAlias(
-                        address = 'user@example.com', 
-                        address_display = 'user@example.com', 
-                        forwards_to = [
-                            'user@example.com'
-                            ], 
-                        permitted_senders = [
-                            'user@example.com'
-                            ], 
-                        required = True, )
-                    ],
-        )
+                        address="user@example.com",
+                        address_display="user@example.com",
+                        forwards_to=["user@example.com"],
+                        permitted_senders=["user@example.com"],
+                        required=True,
+                    )
+                ],
+            )
 
     def testMailAliasByDomain(self):
         """Test MailAliasByDomain"""
@@ -74,5 +69,5 @@ class TestMailAliasByDomain(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

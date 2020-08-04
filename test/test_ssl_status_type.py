@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.ssl_status_type import SSLStatusType  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestSSLStatusType(unittest.TestCase):
     """SSLStatusType unit test stubs"""
 
@@ -35,12 +36,10 @@ class TestSSLStatusType(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.ssl_status_type.SSLStatusType()  # noqa: E501
-        if include_optional :
-            return SSLStatusType(
-            )
-        else :
-            return SSLStatusType(
-        )
+        if include_optional:
+            return SSLStatusType()
+        else:
+            return SSLStatusType()
 
     def testSSLStatusType(self):
         """Test SSLStatusType"""
@@ -48,5 +47,5 @@ class TestSSLStatusType(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

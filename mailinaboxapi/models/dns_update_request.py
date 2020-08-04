@@ -33,13 +33,9 @@ class DNSUpdateRequest(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {
-        'force': 'int'
-    }
+    openapi_types = {"force": "int"}
 
-    attribute_map = {
-        'force': 'force'
-    }
+    attribute_map = {"force": "force"}
 
     def __init__(self, force=None, local_vars_configuration=None):  # noqa: E501
         """DNSUpdateRequest - a model defined in OpenAPI"""  # noqa: E501
@@ -72,14 +68,28 @@ class DNSUpdateRequest(object):
         :param force: The force of this DNSUpdateRequest.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and force is None:  # noqa: E501
-            raise ValueError("Invalid value for `force`, must not be `None`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                force is not None and force > 1):  # noqa: E501
-            raise ValueError("Invalid value for `force`, must be a value less than or equal to `1`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                force is not None and force < 0):  # noqa: E501
-            raise ValueError("Invalid value for `force`, must be a value greater than or equal to `0`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and force is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `force`, must not be `None`"
+            )  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and force is not None
+            and force > 1
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `force`, must be a value less than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and force is not None
+            and force < 0
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `force`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
 
         self._force = force
 
@@ -90,18 +100,20 @@ class DNSUpdateRequest(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

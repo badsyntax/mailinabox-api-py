@@ -38,5 +38,5 @@ setup(
     license="CC0 1.0 Universal",
     long_description="""\
     Python client SDK for the Mail-in-a-Box API  # noqa: E501
-    """
+    """,
 )

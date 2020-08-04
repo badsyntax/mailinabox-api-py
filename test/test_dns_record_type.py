@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.dns_record_type import DNSRecordType  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestDNSRecordType(unittest.TestCase):
     """DNSRecordType unit test stubs"""
 
@@ -35,12 +36,10 @@ class TestDNSRecordType(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.dns_record_type.DNSRecordType()  # noqa: E501
-        if include_optional :
-            return DNSRecordType(
-            )
-        else :
-            return DNSRecordType(
-        )
+        if include_optional:
+            return DNSRecordType()
+        else:
+            return DNSRecordType()
 
     def testDNSRecordType(self):
         """Test DNSRecordType"""
@@ -48,5 +47,5 @@ class TestDNSRecordType(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

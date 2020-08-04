@@ -34,18 +34,20 @@ class MailUserAddRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'email': 'str',
-        'password': 'str',
-        'privileges': 'MailUserPrivilege'
+        "email": "str",
+        "password": "str",
+        "privileges": "MailUserPrivilege",
     }
 
     attribute_map = {
-        'email': 'email',
-        'password': 'password',
-        'privileges': 'privileges'
+        "email": "email",
+        "password": "password",
+        "privileges": "privileges",
     }
 
-    def __init__(self, email=None, password=None, privileges=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self, email=None, password=None, privileges=None, local_vars_configuration=None
+    ):  # noqa: E501
         """MailUserAddRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,8 +82,12 @@ class MailUserAddRequest(object):
         :param email: The email of this MailUserAddRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and email is None:  # noqa: E501
-            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and email is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `email`, must not be `None`"
+            )  # noqa: E501
 
         self._email = email
 
@@ -103,8 +109,12 @@ class MailUserAddRequest(object):
         :param password: The password of this MailUserAddRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and password is None:  # noqa: E501
-            raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and password is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `password`, must not be `None`"
+            )  # noqa: E501
 
         self._password = password
 
@@ -126,8 +136,12 @@ class MailUserAddRequest(object):
         :param privileges: The privileges of this MailUserAddRequest.  # noqa: E501
         :type: MailUserPrivilege
         """
-        if self.local_vars_configuration.client_side_validation and privileges is None:  # noqa: E501
-            raise ValueError("Invalid value for `privileges`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and privileges is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `privileges`, must not be `None`"
+            )  # noqa: E501
 
         self._privileges = privileges
 
@@ -138,18 +152,20 @@ class MailUserAddRequest(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

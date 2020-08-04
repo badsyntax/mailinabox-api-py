@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.web_domain import WebDomain  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestWebDomain(unittest.TestCase):
     """WebDomain unit test stubs"""
 
@@ -35,26 +36,22 @@ class TestWebDomain(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.web_domain.WebDomain()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return WebDomain(
-                custom_root = '/home/user-data/www/example.com', 
-                domain = 'example.com', 
-                root = '/home/user-data/www/default', 
-                ssl_certificate = [
-                    null
-                    ], 
-                static_enabled = True
+                custom_root="/home/user-data/www/example.com",
+                domain="example.com",
+                root="/home/user-data/www/default",
+                ssl_certificate=[null],
+                static_enabled=True,
             )
-        else :
+        else:
             return WebDomain(
-                custom_root = '/home/user-data/www/example.com',
-                domain = 'example.com',
-                root = '/home/user-data/www/default',
-                ssl_certificate = [
-                    null
-                    ],
-                static_enabled = True,
-        )
+                custom_root="/home/user-data/www/example.com",
+                domain="example.com",
+                root="/home/user-data/www/default",
+                ssl_certificate=[null],
+                static_enabled=True,
+            )
 
     def testWebDomain(self):
         """Test WebDomain"""
@@ -62,5 +59,5 @@ class TestWebDomain(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

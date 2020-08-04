@@ -34,18 +34,24 @@ class SystemBackupStatusResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'backups': 'list[SystemBackupStatus]',
-        'unmatched_file_size': 'int',
-        'error': 'str'
+        "backups": "list[SystemBackupStatus]",
+        "unmatched_file_size": "int",
+        "error": "str",
     }
 
     attribute_map = {
-        'backups': 'backups',
-        'unmatched_file_size': 'unmatched_file_size',
-        'error': 'error'
+        "backups": "backups",
+        "unmatched_file_size": "unmatched_file_size",
+        "error": "error",
     }
 
-    def __init__(self, backups=None, unmatched_file_size=None, error=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        backups=None,
+        unmatched_file_size=None,
+        error=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
         """SystemBackupStatusResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,8 +107,13 @@ class SystemBackupStatusResponse(object):
         :param unmatched_file_size: The unmatched_file_size of this SystemBackupStatusResponse.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and unmatched_file_size is None:  # noqa: E501
-            raise ValueError("Invalid value for `unmatched_file_size`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and unmatched_file_size is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `unmatched_file_size`, must not be `None`"
+            )  # noqa: E501
 
         self._unmatched_file_size = unmatched_file_size
 
@@ -134,18 +145,20 @@ class SystemBackupStatusResponse(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.me_response import MeResponse  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestMeResponse(unittest.TestCase):
     """MeResponse unit test stubs"""
 
@@ -35,20 +36,16 @@ class TestMeResponse(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.me_response.MeResponse()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return MeResponse(
-                api_key = '12345abcde', 
-                email = 'user@example.com', 
-                privileges = [
-                    'admin'
-                    ], 
-                reason = 'Incorrect username or password', 
-                status = 'invalid'
+                api_key="12345abcde",
+                email="user@example.com",
+                privileges=["admin"],
+                reason="Incorrect username or password",
+                status="invalid",
             )
-        else :
-            return MeResponse(
-                status = 'invalid',
-        )
+        else:
+            return MeResponse(status="invalid",)
 
     def testMeResponse(self):
         """Test MeResponse"""
@@ -56,5 +53,5 @@ class TestMeResponse(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

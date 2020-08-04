@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.mail_user_remove_privilege_request import MailUserRemovePrivilegeRequest  # noqa: E501
+from mailinaboxapi.models.mail_user_remove_privilege_request import (
+    MailUserRemovePrivilegeRequest,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestMailUserRemovePrivilegeRequest(unittest.TestCase):
     """MailUserRemovePrivilegeRequest unit test stubs"""
@@ -35,16 +38,14 @@ class TestMailUserRemovePrivilegeRequest(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_user_remove_privilege_request.MailUserRemovePrivilegeRequest()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return MailUserRemovePrivilegeRequest(
-                email = 'user@example.com', 
-                privilege = 'admin'
+                email="user@example.com", privilege="admin"
             )
-        else :
+        else:
             return MailUserRemovePrivilegeRequest(
-                email = 'user@example.com',
-                privilege = 'admin',
-        )
+                email="user@example.com", privilege="admin",
+            )
 
     def testMailUserRemovePrivilegeRequest(self):
         """Test MailUserRemovePrivilegeRequest"""
@@ -52,5 +53,5 @@ class TestMailUserRemovePrivilegeRequest(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

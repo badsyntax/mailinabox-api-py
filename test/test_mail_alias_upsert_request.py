@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.mail_alias_upsert_request import MailAliasUpsertRequest  # noqa: E501
+from mailinaboxapi.models.mail_alias_upsert_request import (
+    MailAliasUpsertRequest,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestMailAliasUpsertRequest(unittest.TestCase):
     """MailAliasUpsertRequest unit test stubs"""
@@ -35,20 +38,20 @@ class TestMailAliasUpsertRequest(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_alias_upsert_request.MailAliasUpsertRequest()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return MailAliasUpsertRequest(
-                update_if_exists = 1, 
-                address = 'user@example.com', 
-                forwards_to = 'email1@example.com, example2@example.com', 
-                permitted_senders = 'email1@example.com, example2@example.com'
+                update_if_exists=1,
+                address="user@example.com",
+                forwards_to="email1@example.com, example2@example.com",
+                permitted_senders="email1@example.com, example2@example.com",
             )
-        else :
+        else:
             return MailAliasUpsertRequest(
-                update_if_exists = 1,
-                address = 'user@example.com',
-                forwards_to = 'email1@example.com, example2@example.com',
-                permitted_senders = 'email1@example.com, example2@example.com',
-        )
+                update_if_exists=1,
+                address="user@example.com",
+                forwards_to="email1@example.com, example2@example.com",
+                permitted_senders="email1@example.com, example2@example.com",
+            )
 
     def testMailAliasUpsertRequest(self):
         """Test MailAliasUpsertRequest"""
@@ -56,5 +59,5 @@ class TestMailAliasUpsertRequest(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

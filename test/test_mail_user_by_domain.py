@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.mail_user_by_domain import MailUserByDomain  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestMailUserByDomain(unittest.TestCase):
     """MailUserByDomain unit test stubs"""
 
@@ -35,32 +36,30 @@ class TestMailUserByDomain(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_user_by_domain.MailUserByDomain()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return MailUserByDomain(
-                domain = 'example.com', 
-                users = [
+                domain="example.com",
+                users=[
                     mailinaboxapi.models.mail_user.MailUser(
-                        email = 'user@example.com', 
-                        privileges = [
-                            'admin'
-                            ], 
-                        status = 'active', 
-                        mailbox = '/home/user-data/mail/mailboxes/example.com/user', )
-                    ]
+                        email="user@example.com",
+                        privileges=["admin"],
+                        status="active",
+                        mailbox="/home/user-data/mail/mailboxes/example.com/user",
+                    )
+                ],
             )
-        else :
+        else:
             return MailUserByDomain(
-                domain = 'example.com',
-                users = [
+                domain="example.com",
+                users=[
                     mailinaboxapi.models.mail_user.MailUser(
-                        email = 'user@example.com', 
-                        privileges = [
-                            'admin'
-                            ], 
-                        status = 'active', 
-                        mailbox = '/home/user-data/mail/mailboxes/example.com/user', )
-                    ],
-        )
+                        email="user@example.com",
+                        privileges=["admin"],
+                        status="active",
+                        mailbox="/home/user-data/mail/mailboxes/example.com/user",
+                    )
+                ],
+            )
 
     def testMailUserByDomain(self):
         """Test MailUserByDomain"""
@@ -68,5 +67,5 @@ class TestMailUserByDomain(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

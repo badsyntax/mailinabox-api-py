@@ -33,19 +33,13 @@ class DNSCustomRecord(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {
-        'qname': 'str',
-        'rtype': 'DNSRecordType',
-        'value': 'str'
-    }
+    openapi_types = {"qname": "str", "rtype": "DNSRecordType", "value": "str"}
 
-    attribute_map = {
-        'qname': 'qname',
-        'rtype': 'rtype',
-        'value': 'value'
-    }
+    attribute_map = {"qname": "qname", "rtype": "rtype", "value": "value"}
 
-    def __init__(self, qname=None, rtype=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self, qname=None, rtype=None, value=None, local_vars_configuration=None
+    ):  # noqa: E501
         """DNSCustomRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,8 +74,12 @@ class DNSCustomRecord(object):
         :param qname: The qname of this DNSCustomRecord.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and qname is None:  # noqa: E501
-            raise ValueError("Invalid value for `qname`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and qname is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `qname`, must not be `None`"
+            )  # noqa: E501
 
         self._qname = qname
 
@@ -103,8 +101,12 @@ class DNSCustomRecord(object):
         :param rtype: The rtype of this DNSCustomRecord.  # noqa: E501
         :type: DNSRecordType
         """
-        if self.local_vars_configuration.client_side_validation and rtype is None:  # noqa: E501
-            raise ValueError("Invalid value for `rtype`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and rtype is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `rtype`, must not be `None`"
+            )  # noqa: E501
 
         self._rtype = rtype
 
@@ -126,8 +128,12 @@ class DNSCustomRecord(object):
         :param value: The value of this DNSCustomRecord.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and value is None:  # noqa: E501
-            raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and value is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `value`, must not be `None`"
+            )  # noqa: E501
 
         self._value = value
 
@@ -138,18 +144,20 @@ class DNSCustomRecord(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

@@ -34,22 +34,30 @@ class MailAlias(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'address': 'str',
-        'address_display': 'str',
-        'forwards_to': 'list[str]',
-        'permitted_senders': 'list[str]',
-        'required': 'bool'
+        "address": "str",
+        "address_display": "str",
+        "forwards_to": "list[str]",
+        "permitted_senders": "list[str]",
+        "required": "bool",
     }
 
     attribute_map = {
-        'address': 'address',
-        'address_display': 'address_display',
-        'forwards_to': 'forwards_to',
-        'permitted_senders': 'permitted_senders',
-        'required': 'required'
+        "address": "address",
+        "address_display": "address_display",
+        "forwards_to": "forwards_to",
+        "permitted_senders": "permitted_senders",
+        "required": "required",
     }
 
-    def __init__(self, address=None, address_display=None, forwards_to=None, permitted_senders=None, required=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        address=None,
+        address_display=None,
+        forwards_to=None,
+        permitted_senders=None,
+        required=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
         """MailAlias - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,8 +96,12 @@ class MailAlias(object):
         :param address: The address of this MailAlias.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and address is None:  # noqa: E501
-            raise ValueError("Invalid value for `address`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and address is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `address`, must not be `None`"
+            )  # noqa: E501
 
         self._address = address
 
@@ -113,8 +125,13 @@ class MailAlias(object):
         :param address_display: The address_display of this MailAlias.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and address_display is None:  # noqa: E501
-            raise ValueError("Invalid value for `address_display`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and address_display is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `address_display`, must not be `None`"
+            )  # noqa: E501
 
         self._address_display = address_display
 
@@ -136,8 +153,12 @@ class MailAlias(object):
         :param forwards_to: The forwards_to of this MailAlias.  # noqa: E501
         :type: list[str]
         """
-        if self.local_vars_configuration.client_side_validation and forwards_to is None:  # noqa: E501
-            raise ValueError("Invalid value for `forwards_to`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and forwards_to is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `forwards_to`, must not be `None`"
+            )  # noqa: E501
 
         self._forwards_to = forwards_to
 
@@ -180,8 +201,12 @@ class MailAlias(object):
         :param required: The required of this MailAlias.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and required is None:  # noqa: E501
-            raise ValueError("Invalid value for `required`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and required is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `required`, must not be `None`"
+            )  # noqa: E501
 
         self._required = required
 
@@ -192,18 +217,20 @@ class MailAlias(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

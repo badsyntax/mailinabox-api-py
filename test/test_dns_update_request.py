@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.dns_update_request import DNSUpdateRequest  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestDNSUpdateRequest(unittest.TestCase):
     """DNSUpdateRequest unit test stubs"""
 
@@ -35,14 +36,10 @@ class TestDNSUpdateRequest(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.dns_update_request.DNSUpdateRequest()  # noqa: E501
-        if include_optional :
-            return DNSUpdateRequest(
-                force = 1
-            )
-        else :
-            return DNSUpdateRequest(
-                force = 1,
-        )
+        if include_optional:
+            return DNSUpdateRequest(force=1)
+        else:
+            return DNSUpdateRequest(force=1,)
 
     def testDNSUpdateRequest(self):
         """Test DNSUpdateRequest"""
@@ -50,5 +47,5 @@ class TestDNSUpdateRequest(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -34,22 +34,30 @@ class WebDomain(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'custom_root': 'str',
-        'domain': 'str',
-        'root': 'str',
-        'ssl_certificate': 'list[OneOfstringstring]',
-        'static_enabled': 'bool'
+        "custom_root": "str",
+        "domain": "str",
+        "root": "str",
+        "ssl_certificate": "list[OneOfstringstring]",
+        "static_enabled": "bool",
     }
 
     attribute_map = {
-        'custom_root': 'custom_root',
-        'domain': 'domain',
-        'root': 'root',
-        'ssl_certificate': 'ssl_certificate',
-        'static_enabled': 'static_enabled'
+        "custom_root": "custom_root",
+        "domain": "domain",
+        "root": "root",
+        "ssl_certificate": "ssl_certificate",
+        "static_enabled": "static_enabled",
     }
 
-    def __init__(self, custom_root=None, domain=None, root=None, ssl_certificate=None, static_enabled=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        custom_root=None,
+        domain=None,
+        root=None,
+        ssl_certificate=None,
+        static_enabled=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
         """WebDomain - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,8 +94,12 @@ class WebDomain(object):
         :param custom_root: The custom_root of this WebDomain.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and custom_root is None:  # noqa: E501
-            raise ValueError("Invalid value for `custom_root`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and custom_root is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `custom_root`, must not be `None`"
+            )  # noqa: E501
 
         self._custom_root = custom_root
 
@@ -111,8 +123,12 @@ class WebDomain(object):
         :param domain: The domain of this WebDomain.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and domain is None:  # noqa: E501
-            raise ValueError("Invalid value for `domain`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and domain is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `domain`, must not be `None`"
+            )  # noqa: E501
 
         self._domain = domain
 
@@ -134,8 +150,12 @@ class WebDomain(object):
         :param root: The root of this WebDomain.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and root is None:  # noqa: E501
-            raise ValueError("Invalid value for `root`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and root is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `root`, must not be `None`"
+            )  # noqa: E501
 
         self._root = root
 
@@ -157,8 +177,13 @@ class WebDomain(object):
         :param ssl_certificate: The ssl_certificate of this WebDomain.  # noqa: E501
         :type: list[OneOfstringstring]
         """
-        if self.local_vars_configuration.client_side_validation and ssl_certificate is None:  # noqa: E501
-            raise ValueError("Invalid value for `ssl_certificate`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and ssl_certificate is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `ssl_certificate`, must not be `None`"
+            )  # noqa: E501
 
         self._ssl_certificate = ssl_certificate
 
@@ -180,8 +205,13 @@ class WebDomain(object):
         :param static_enabled: The static_enabled of this WebDomain.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and static_enabled is None:  # noqa: E501
-            raise ValueError("Invalid value for `static_enabled`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and static_enabled is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `static_enabled`, must not be `None`"
+            )  # noqa: E501
 
         self._static_enabled = static_enabled
 
@@ -192,18 +222,20 @@ class WebDomain(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

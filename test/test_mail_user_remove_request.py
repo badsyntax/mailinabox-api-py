@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.mail_user_remove_request import MailUserRemoveRequest  # noqa: E501
+from mailinaboxapi.models.mail_user_remove_request import (
+    MailUserRemoveRequest,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestMailUserRemoveRequest(unittest.TestCase):
     """MailUserRemoveRequest unit test stubs"""
@@ -35,14 +38,10 @@ class TestMailUserRemoveRequest(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_user_remove_request.MailUserRemoveRequest()  # noqa: E501
-        if include_optional :
-            return MailUserRemoveRequest(
-                email = 'user@example.com'
-            )
-        else :
-            return MailUserRemoveRequest(
-                email = 'user@example.com',
-        )
+        if include_optional:
+            return MailUserRemoveRequest(email="user@example.com")
+        else:
+            return MailUserRemoveRequest(email="user@example.com",)
 
     def testMailUserRemoveRequest(self):
         """Test MailUserRemoveRequest"""
@@ -50,5 +49,5 @@ class TestMailUserRemoveRequest(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

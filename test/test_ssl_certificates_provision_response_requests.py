@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.ssl_certificates_provision_response_requests import SSLCertificatesProvisionResponseRequests  # noqa: E501
+from mailinaboxapi.models.ssl_certificates_provision_response_requests import (
+    SSLCertificatesProvisionResponseRequests,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestSSLCertificatesProvisionResponseRequests(unittest.TestCase):
     """SSLCertificatesProvisionResponseRequests unit test stubs"""
@@ -35,22 +38,22 @@ class TestSSLCertificatesProvisionResponseRequests(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.ssl_certificates_provision_response_requests.SSLCertificatesProvisionResponseRequests()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return SSLCertificatesProvisionResponseRequests(
-                log = ["The domain name does not resolve to this machine: [Not Set] (A), [Not Set] (AAAA)."], 
-                result = 'installed', 
-                domains = [
-                    'example.com'
-                    ]
+                log=[
+                    "The domain name does not resolve to this machine: [Not Set] (A), [Not Set] (AAAA)."
+                ],
+                result="installed",
+                domains=["example.com"],
             )
-        else :
+        else:
             return SSLCertificatesProvisionResponseRequests(
-                log = ["The domain name does not resolve to this machine: [Not Set] (A), [Not Set] (AAAA)."],
-                result = 'installed',
-                domains = [
-                    'example.com'
-                    ],
-        )
+                log=[
+                    "The domain name does not resolve to this machine: [Not Set] (A), [Not Set] (AAAA)."
+                ],
+                result="installed",
+                domains=["example.com"],
+            )
 
     def testSSLCertificatesProvisionResponseRequests(self):
         """Test SSLCertificatesProvisionResponseRequests"""
@@ -58,5 +61,5 @@ class TestSSLCertificatesProvisionResponseRequests(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

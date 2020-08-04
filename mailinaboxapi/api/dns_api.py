@@ -19,10 +19,7 @@ import re  # noqa: F401
 import six
 
 from mailinaboxapi.api_client import ApiClient
-from mailinaboxapi.exceptions import (  # noqa: F401
-    ApiTypeError,
-    ApiValueError
-)
+from mailinaboxapi.exceptions import ApiTypeError, ApiValueError  # noqa: F401
 
 
 class DNSApi(object):
@@ -61,10 +58,14 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.add_dns_custom_record_with_http_info(domain, type, body, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.add_dns_custom_record_with_http_info(
+            domain, type, body, **kwargs
+        )  # noqa: E501
 
-    def add_dns_custom_record_with_http_info(self, domain, type, body, **kwargs):  # noqa: E501
+    def add_dns_custom_record_with_http_info(
+        self, domain, type, body, **kwargs
+    ):  # noqa: E501
         """add_dns_custom_record  # noqa: E501
 
         Add a custom DNS record.  # noqa: E501
@@ -93,48 +94,56 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain',
-            'type',
-            'body'
-        ]
+        all_params = ["domain", "type", "body"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_dns_custom_record" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `add_dns_custom_record`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `add_dns_custom_record`"
+            )  # noqa: E501
         # verify the required parameter 'type' is set
-        if self.api_client.client_side_validation and ('type' not in local_var_params or  # noqa: E501
-                                                        local_var_params['type'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `type` when calling `add_dns_custom_record`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "type" not in local_var_params
+            or local_var_params["type"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `type` when calling `add_dns_custom_record`"
+            )  # noqa: E501
         # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
-                                                        local_var_params['body'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `add_dns_custom_record`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "body" not in local_var_params
+            or local_var_params["body"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `body` when calling `add_dns_custom_record`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in local_var_params:
-            path_params['domain'] = local_var_params['domain']  # noqa: E501
-        if 'type' in local_var_params:
-            path_params['type'] = local_var_params['type']  # noqa: E501
+        if "domain" in local_var_params:
+            path_params["domain"] = local_var_params["domain"]  # noqa: E501
+        if "type" in local_var_params:
+            path_params["type"] = local_var_params["type"]  # noqa: E501
 
         query_params = []
 
@@ -144,34 +153,42 @@ class DNSApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
+        if "body" in local_var_params:
+            body_params = local_var_params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['text/plain'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/custom/{domain}/{type}', 'POST',
+            "/dns/custom/{domain}/{type}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_dns_custom_record_for_type_a(self, domain, body, **kwargs):  # noqa: E501
         """add_dns_custom_record_for_type_a  # noqa: E501
@@ -196,10 +213,14 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.add_dns_custom_record_for_type_a_with_http_info(domain, body, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.add_dns_custom_record_for_type_a_with_http_info(
+            domain, body, **kwargs
+        )  # noqa: E501
 
-    def add_dns_custom_record_for_type_a_with_http_info(self, domain, body, **kwargs):  # noqa: E501
+    def add_dns_custom_record_for_type_a_with_http_info(
+        self, domain, body, **kwargs
+    ):  # noqa: E501
         """add_dns_custom_record_for_type_a  # noqa: E501
 
         Add a custom DNS A record.  # noqa: E501
@@ -227,41 +248,46 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain',
-            'body'
-        ]
+        all_params = ["domain", "body"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_dns_custom_record_for_type_a" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `add_dns_custom_record_for_type_a`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `add_dns_custom_record_for_type_a`"
+            )  # noqa: E501
         # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
-                                                        local_var_params['body'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `add_dns_custom_record_for_type_a`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "body" not in local_var_params
+            or local_var_params["body"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `body` when calling `add_dns_custom_record_for_type_a`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in local_var_params:
-            path_params['domain'] = local_var_params['domain']  # noqa: E501
+        if "domain" in local_var_params:
+            path_params["domain"] = local_var_params["domain"]  # noqa: E501
 
         query_params = []
 
@@ -271,34 +297,42 @@ class DNSApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
+        if "body" in local_var_params:
+            body_params = local_var_params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['text/plain'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/custom/{domain}', 'POST',
+            "/dns/custom/{domain}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_dns_secondary_nameserver(self, hostnames, **kwargs):  # noqa: E501
         """add_dns_secondary_nameserver  # noqa: E501
@@ -322,10 +356,14 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.add_dns_secondary_nameserver_with_http_info(hostnames, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.add_dns_secondary_nameserver_with_http_info(
+            hostnames, **kwargs
+        )  # noqa: E501
 
-    def add_dns_secondary_nameserver_with_http_info(self, hostnames, **kwargs):  # noqa: E501
+    def add_dns_secondary_nameserver_with_http_info(
+        self, hostnames, **kwargs
+    ):  # noqa: E501
         """add_dns_secondary_nameserver  # noqa: E501
 
         Add secondary nameservers.  # noqa: E501
@@ -352,30 +390,32 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'hostnames'
-        ]
+        all_params = ["hostnames"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_dns_secondary_nameserver" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'hostnames' is set
-        if self.api_client.client_side_validation and ('hostnames' not in local_var_params or  # noqa: E501
-                                                        local_var_params['hostnames'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `hostnames` when calling `add_dns_secondary_nameserver`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "hostnames" not in local_var_params
+            or local_var_params["hostnames"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `hostnames` when calling `add_dns_secondary_nameserver`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -387,36 +427,46 @@ class DNSApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'hostnames' in local_var_params:
-            form_params.append(('hostnames', local_var_params['hostnames']))  # noqa: E501
+        if "hostnames" in local_var_params:
+            form_params.append(
+                ("hostnames", local_var_params["hostnames"])
+            )  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/secondary-nameserver', 'POST',
+            "/dns/secondary-nameserver",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_dns_custom_records(self, **kwargs):  # noqa: E501
         """get_dns_custom_records  # noqa: E501
@@ -439,7 +489,7 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.get_dns_custom_records_with_http_info(**kwargs)  # noqa: E501
 
     def get_dns_custom_records_with_http_info(self, **kwargs):  # noqa: E501
@@ -468,25 +518,24 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-        ]
+        all_params = []
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_dns_custom_records" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
@@ -501,29 +550,36 @@ class DNSApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/custom', 'GET',
+            "/dns/custom",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DNSCustomRecordsResponse',  # noqa: E501
+            response_type="DNSCustomRecordsResponse",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def get_dns_custom_records_for_domain_and_type(self, domain, type, **kwargs):  # noqa: E501
+    def get_dns_custom_records_for_domain_and_type(
+        self, domain, type, **kwargs
+    ):  # noqa: E501
         """get_dns_custom_records_for_domain_and_type  # noqa: E501
 
         Get DNS records for domain and type.  # noqa: E501
@@ -546,10 +602,14 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.get_dns_custom_records_for_domain_and_type_with_http_info(domain, type, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.get_dns_custom_records_for_domain_and_type_with_http_info(
+            domain, type, **kwargs
+        )  # noqa: E501
 
-    def get_dns_custom_records_for_domain_and_type_with_http_info(self, domain, type, **kwargs):  # noqa: E501
+    def get_dns_custom_records_for_domain_and_type_with_http_info(
+        self, domain, type, **kwargs
+    ):  # noqa: E501
         """get_dns_custom_records_for_domain_and_type  # noqa: E501
 
         Get DNS records for domain and type.  # noqa: E501
@@ -577,43 +637,48 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain',
-            'type'
-        ]
+        all_params = ["domain", "type"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_dns_custom_records_for_domain_and_type" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `get_dns_custom_records_for_domain_and_type`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `get_dns_custom_records_for_domain_and_type`"
+            )  # noqa: E501
         # verify the required parameter 'type' is set
-        if self.api_client.client_side_validation and ('type' not in local_var_params or  # noqa: E501
-                                                        local_var_params['type'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `type` when calling `get_dns_custom_records_for_domain_and_type`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "type" not in local_var_params
+            or local_var_params["type"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `type` when calling `get_dns_custom_records_for_domain_and_type`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in local_var_params:
-            path_params['domain'] = local_var_params['domain']  # noqa: E501
-        if 'type' in local_var_params:
-            path_params['type'] = local_var_params['type']  # noqa: E501
+        if "domain" in local_var_params:
+            path_params["domain"] = local_var_params["domain"]  # noqa: E501
+        if "type" in local_var_params:
+            path_params["type"] = local_var_params["type"]  # noqa: E501
 
         query_params = []
 
@@ -624,29 +689,36 @@ class DNSApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/custom/{domain}/{type}', 'GET',
+            "/dns/custom/{domain}/{type}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DNSCustomRecordsResponse',  # noqa: E501
+            response_type="DNSCustomRecordsResponse",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def get_dns_custom_records_for_domain_and_type_a(self, domain, **kwargs):  # noqa: E501
+    def get_dns_custom_records_for_domain_and_type_a(
+        self, domain, **kwargs
+    ):  # noqa: E501
         """get_dns_custom_records_for_domain_and_type_a  # noqa: E501
 
         Get DNS A records for domain.  # noqa: E501
@@ -668,10 +740,14 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.get_dns_custom_records_for_domain_and_type_a_with_http_info(domain, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.get_dns_custom_records_for_domain_and_type_a_with_http_info(
+            domain, **kwargs
+        )  # noqa: E501
 
-    def get_dns_custom_records_for_domain_and_type_a_with_http_info(self, domain, **kwargs):  # noqa: E501
+    def get_dns_custom_records_for_domain_and_type_a_with_http_info(
+        self, domain, **kwargs
+    ):  # noqa: E501
         """get_dns_custom_records_for_domain_and_type_a  # noqa: E501
 
         Get DNS A records for domain.  # noqa: E501
@@ -698,36 +774,38 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain'
-        ]
+        all_params = ["domain"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_dns_custom_records_for_domain_and_type_a" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `get_dns_custom_records_for_domain_and_type_a`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `get_dns_custom_records_for_domain_and_type_a`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in local_var_params:
-            path_params['domain'] = local_var_params['domain']  # noqa: E501
+        if "domain" in local_var_params:
+            path_params["domain"] = local_var_params["domain"]  # noqa: E501
 
         query_params = []
 
@@ -738,27 +816,32 @@ class DNSApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/custom/{domain}', 'GET',
+            "/dns/custom/{domain}",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DNSCustomRecordsResponse',  # noqa: E501
+            response_type="DNSCustomRecordsResponse",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_dns_dump(self, **kwargs):  # noqa: E501
         """get_dns_dump  # noqa: E501
@@ -781,7 +864,7 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.get_dns_dump_with_http_info(**kwargs)  # noqa: E501
 
     def get_dns_dump_with_http_info(self, **kwargs):  # noqa: E501
@@ -810,25 +893,24 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-        ]
+        all_params = []
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_dns_dump" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
@@ -843,27 +925,32 @@ class DNSApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/dump', 'GET',
+            "/dns/dump",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DNSDumpResponse',  # noqa: E501
+            response_type="DNSDumpResponse",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_dns_secondary_nameserver(self, **kwargs):  # noqa: E501
         """get_dns_secondary_nameserver  # noqa: E501
@@ -886,7 +973,7 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.get_dns_secondary_nameserver_with_http_info(**kwargs)  # noqa: E501
 
     def get_dns_secondary_nameserver_with_http_info(self, **kwargs):  # noqa: E501
@@ -915,25 +1002,24 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-        ]
+        all_params = []
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_dns_secondary_nameserver" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
@@ -948,27 +1034,32 @@ class DNSApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/secondary-nameserver', 'GET',
+            "/dns/secondary-nameserver",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DNSSecondaryNameserverResponse',  # noqa: E501
+            response_type="DNSSecondaryNameserverResponse",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_dns_zones(self, **kwargs):  # noqa: E501
         """get_dns_zones  # noqa: E501
@@ -991,7 +1082,7 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.get_dns_zones_with_http_info(**kwargs)  # noqa: E501
 
     def get_dns_zones_with_http_info(self, **kwargs):  # noqa: E501
@@ -1020,25 +1111,24 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-        ]
+        all_params = []
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_dns_zones" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
@@ -1053,27 +1143,32 @@ class DNSApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/zones', 'GET',
+            "/dns/zones",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DNSZonesResponse',  # noqa: E501
+            response_type="DNSZonesResponse",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def remove_dns_custom_record(self, domain, type, body, **kwargs):  # noqa: E501
         """remove_dns_custom_record  # noqa: E501
@@ -1099,10 +1194,14 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.remove_dns_custom_record_with_http_info(domain, type, body, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.remove_dns_custom_record_with_http_info(
+            domain, type, body, **kwargs
+        )  # noqa: E501
 
-    def remove_dns_custom_record_with_http_info(self, domain, type, body, **kwargs):  # noqa: E501
+    def remove_dns_custom_record_with_http_info(
+        self, domain, type, body, **kwargs
+    ):  # noqa: E501
         """remove_dns_custom_record  # noqa: E501
 
         Remove a custom DNS record.  # noqa: E501
@@ -1131,48 +1230,56 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain',
-            'type',
-            'body'
-        ]
+        all_params = ["domain", "type", "body"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method remove_dns_custom_record" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `remove_dns_custom_record`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `remove_dns_custom_record`"
+            )  # noqa: E501
         # verify the required parameter 'type' is set
-        if self.api_client.client_side_validation and ('type' not in local_var_params or  # noqa: E501
-                                                        local_var_params['type'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `type` when calling `remove_dns_custom_record`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "type" not in local_var_params
+            or local_var_params["type"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `type` when calling `remove_dns_custom_record`"
+            )  # noqa: E501
         # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
-                                                        local_var_params['body'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `remove_dns_custom_record`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "body" not in local_var_params
+            or local_var_params["body"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `body` when calling `remove_dns_custom_record`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in local_var_params:
-            path_params['domain'] = local_var_params['domain']  # noqa: E501
-        if 'type' in local_var_params:
-            path_params['type'] = local_var_params['type']  # noqa: E501
+        if "domain" in local_var_params:
+            path_params["domain"] = local_var_params["domain"]  # noqa: E501
+        if "type" in local_var_params:
+            path_params["type"] = local_var_params["type"]  # noqa: E501
 
         query_params = []
 
@@ -1182,34 +1289,42 @@ class DNSApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
+        if "body" in local_var_params:
+            body_params = local_var_params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['text/plain'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/custom/{domain}/{type}', 'DELETE',
+            "/dns/custom/{domain}/{type}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def remove_dns_custom_record_for_type_a(self, domain, body, **kwargs):  # noqa: E501
         """remove_dns_custom_record_for_type_a  # noqa: E501
@@ -1234,10 +1349,14 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.remove_dns_custom_record_for_type_a_with_http_info(domain, body, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.remove_dns_custom_record_for_type_a_with_http_info(
+            domain, body, **kwargs
+        )  # noqa: E501
 
-    def remove_dns_custom_record_for_type_a_with_http_info(self, domain, body, **kwargs):  # noqa: E501
+    def remove_dns_custom_record_for_type_a_with_http_info(
+        self, domain, body, **kwargs
+    ):  # noqa: E501
         """remove_dns_custom_record_for_type_a  # noqa: E501
 
         Remove a custom DNS A record.  # noqa: E501
@@ -1265,41 +1384,46 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain',
-            'body'
-        ]
+        all_params = ["domain", "body"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method remove_dns_custom_record_for_type_a" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `remove_dns_custom_record_for_type_a`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `remove_dns_custom_record_for_type_a`"
+            )  # noqa: E501
         # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
-                                                        local_var_params['body'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `remove_dns_custom_record_for_type_a`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "body" not in local_var_params
+            or local_var_params["body"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `body` when calling `remove_dns_custom_record_for_type_a`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in local_var_params:
-            path_params['domain'] = local_var_params['domain']  # noqa: E501
+        if "domain" in local_var_params:
+            path_params["domain"] = local_var_params["domain"]  # noqa: E501
 
         query_params = []
 
@@ -1309,34 +1433,42 @@ class DNSApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
+        if "body" in local_var_params:
+            body_params = local_var_params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['text/plain'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/custom/{domain}', 'DELETE',
+            "/dns/custom/{domain}",
+            "DELETE",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_dns(self, force, **kwargs):  # noqa: E501
         """update_dns  # noqa: E501
@@ -1360,7 +1492,7 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.update_dns_with_http_info(force, **kwargs)  # noqa: E501
 
     def update_dns_with_http_info(self, force, **kwargs):  # noqa: E501
@@ -1390,35 +1522,49 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'force'
-        ]
+        all_params = ["force"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_dns" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'force' is set
-        if self.api_client.client_side_validation and ('force' not in local_var_params or  # noqa: E501
-                                                        local_var_params['force'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `force` when calling `update_dns`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "force" not in local_var_params
+            or local_var_params["force"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `force` when calling `update_dns`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'force' in local_var_params and local_var_params['force'] > 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `force` when calling `update_dns`, must be a value less than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and 'force' in local_var_params and local_var_params['force'] < 0:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `force` when calling `update_dns`, must be a value greater than or equal to `0`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation
+            and "force" in local_var_params
+            and local_var_params["force"] > 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `force` when calling `update_dns`, must be a value less than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation
+            and "force" in local_var_params
+            and local_var_params["force"] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `force` when calling `update_dns`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1429,36 +1575,44 @@ class DNSApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'force' in local_var_params:
-            form_params.append(('force', local_var_params['force']))  # noqa: E501
+        if "force" in local_var_params:
+            form_params.append(("force", local_var_params["force"]))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/update', 'POST',
+            "/dns/update",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_dns_custom_record(self, domain, type, body, **kwargs):  # noqa: E501
         """update_dns_custom_record  # noqa: E501
@@ -1484,10 +1638,14 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.update_dns_custom_record_with_http_info(domain, type, body, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.update_dns_custom_record_with_http_info(
+            domain, type, body, **kwargs
+        )  # noqa: E501
 
-    def update_dns_custom_record_with_http_info(self, domain, type, body, **kwargs):  # noqa: E501
+    def update_dns_custom_record_with_http_info(
+        self, domain, type, body, **kwargs
+    ):  # noqa: E501
         """update_dns_custom_record  # noqa: E501
 
         Update a custom DNS record.  # noqa: E501
@@ -1516,48 +1674,56 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain',
-            'type',
-            'body'
-        ]
+        all_params = ["domain", "type", "body"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_dns_custom_record" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `update_dns_custom_record`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `update_dns_custom_record`"
+            )  # noqa: E501
         # verify the required parameter 'type' is set
-        if self.api_client.client_side_validation and ('type' not in local_var_params or  # noqa: E501
-                                                        local_var_params['type'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `type` when calling `update_dns_custom_record`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "type" not in local_var_params
+            or local_var_params["type"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `type` when calling `update_dns_custom_record`"
+            )  # noqa: E501
         # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
-                                                        local_var_params['body'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `update_dns_custom_record`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "body" not in local_var_params
+            or local_var_params["body"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `body` when calling `update_dns_custom_record`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in local_var_params:
-            path_params['domain'] = local_var_params['domain']  # noqa: E501
-        if 'type' in local_var_params:
-            path_params['type'] = local_var_params['type']  # noqa: E501
+        if "domain" in local_var_params:
+            path_params["domain"] = local_var_params["domain"]  # noqa: E501
+        if "type" in local_var_params:
+            path_params["type"] = local_var_params["type"]  # noqa: E501
 
         query_params = []
 
@@ -1567,34 +1733,42 @@ class DNSApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
+        if "body" in local_var_params:
+            body_params = local_var_params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['text/plain'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/custom/{domain}/{type}', 'PUT',
+            "/dns/custom/{domain}/{type}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def update_dns_custom_record_for_type_a(self, domain, body, **kwargs):  # noqa: E501
         """update_dns_custom_record_for_type_a  # noqa: E501
@@ -1619,10 +1793,14 @@ class DNSApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.update_dns_custom_record_for_type_a_with_http_info(domain, body, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.update_dns_custom_record_for_type_a_with_http_info(
+            domain, body, **kwargs
+        )  # noqa: E501
 
-    def update_dns_custom_record_for_type_a_with_http_info(self, domain, body, **kwargs):  # noqa: E501
+    def update_dns_custom_record_for_type_a_with_http_info(
+        self, domain, body, **kwargs
+    ):  # noqa: E501
         """update_dns_custom_record_for_type_a  # noqa: E501
 
         Update a custom DNS A record.  # noqa: E501
@@ -1650,41 +1828,46 @@ class DNSApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain',
-            'body'
-        ]
+        all_params = ["domain", "body"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method update_dns_custom_record_for_type_a" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `update_dns_custom_record_for_type_a`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `update_dns_custom_record_for_type_a`"
+            )  # noqa: E501
         # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and ('body' not in local_var_params or  # noqa: E501
-                                                        local_var_params['body'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `update_dns_custom_record_for_type_a`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "body" not in local_var_params
+            or local_var_params["body"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `body` when calling `update_dns_custom_record_for_type_a`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in local_var_params:
-            path_params['domain'] = local_var_params['domain']  # noqa: E501
+        if "domain" in local_var_params:
+            path_params["domain"] = local_var_params["domain"]  # noqa: E501
 
         query_params = []
 
@@ -1694,31 +1877,39 @@ class DNSApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
+        if "body" in local_var_params:
+            body_params = local_var_params["body"]
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['text/plain'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["text/plain"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/dns/custom/{domain}', 'PUT',
+            "/dns/custom/{domain}",
+            "PUT",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

@@ -34,20 +34,27 @@ class DNSDumpDomainRecord(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'explanation': 'str',
-        'qname': 'str',
-        'rtype': 'DNSRecordType',
-        'value': 'str'
+        "explanation": "str",
+        "qname": "str",
+        "rtype": "DNSRecordType",
+        "value": "str",
     }
 
     attribute_map = {
-        'explanation': 'explanation',
-        'qname': 'qname',
-        'rtype': 'rtype',
-        'value': 'value'
+        "explanation": "explanation",
+        "qname": "qname",
+        "rtype": "rtype",
+        "value": "value",
     }
 
-    def __init__(self, explanation=None, qname=None, rtype=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self,
+        explanation=None,
+        qname=None,
+        rtype=None,
+        value=None,
+        local_vars_configuration=None,
+    ):  # noqa: E501
         """DNSDumpDomainRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,8 +90,12 @@ class DNSDumpDomainRecord(object):
         :param explanation: The explanation of this DNSDumpDomainRecord.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and explanation is None:  # noqa: E501
-            raise ValueError("Invalid value for `explanation`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and explanation is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `explanation`, must not be `None`"
+            )  # noqa: E501
 
         self._explanation = explanation
 
@@ -108,8 +119,12 @@ class DNSDumpDomainRecord(object):
         :param qname: The qname of this DNSDumpDomainRecord.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and qname is None:  # noqa: E501
-            raise ValueError("Invalid value for `qname`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and qname is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `qname`, must not be `None`"
+            )  # noqa: E501
 
         self._qname = qname
 
@@ -152,8 +167,12 @@ class DNSDumpDomainRecord(object):
         :param value: The value of this DNSDumpDomainRecord.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and value is None:  # noqa: E501
-            raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and value is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `value`, must not be `None`"
+            )  # noqa: E501
 
         self._value = value
 
@@ -164,18 +183,20 @@ class DNSDumpDomainRecord(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

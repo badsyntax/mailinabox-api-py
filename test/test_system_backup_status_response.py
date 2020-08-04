@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.system_backup_status_response import SystemBackupStatusResponse  # noqa: E501
+from mailinaboxapi.models.system_backup_status_response import (
+    SystemBackupStatusResponse,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestSystemBackupStatusResponse(unittest.TestCase):
     """SystemBackupStatusResponse unit test stubs"""
@@ -35,25 +38,26 @@ class TestSystemBackupStatusResponse(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.system_backup_status_response.SystemBackupStatusResponse()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return SystemBackupStatusResponse(
-                backups = [
+                backups=[
                     mailinaboxapi.models.system_backup_status.SystemBackupStatus(
-                        date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        date_delta = '15 hours, 40 minutes', 
-                        date_str = '2020-08-01 03:37:06 BST', 
-                        deleted_in = 'approx. 6 days', 
-                        full = False, 
-                        size = 125332, 
-                        volumes = 1, )
-                    ], 
-                unmatched_file_size = 0, 
-                error = 'Something is wrong with the backup'
+                        date=datetime.datetime.strptime(
+                            "2013-10-20 19:20:30.00", "%Y-%m-%d %H:%M:%S.%f"
+                        ),
+                        date_delta="15 hours, 40 minutes",
+                        date_str="2020-08-01 03:37:06 BST",
+                        deleted_in="approx. 6 days",
+                        full=False,
+                        size=125332,
+                        volumes=1,
+                    )
+                ],
+                unmatched_file_size=0,
+                error="Something is wrong with the backup",
             )
-        else :
-            return SystemBackupStatusResponse(
-                unmatched_file_size = 0,
-        )
+        else:
+            return SystemBackupStatusResponse(unmatched_file_size=0,)
 
     def testSystemBackupStatusResponse(self):
         """Test SystemBackupStatusResponse"""
@@ -61,5 +65,5 @@ class TestSystemBackupStatusResponse(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

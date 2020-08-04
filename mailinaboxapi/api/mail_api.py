@@ -19,10 +19,7 @@ import re  # noqa: F401
 import six
 
 from mailinaboxapi.api_client import ApiClient
-from mailinaboxapi.exceptions import (  # noqa: F401
-    ApiTypeError,
-    ApiValueError
-)
+from mailinaboxapi.exceptions import ApiTypeError, ApiValueError  # noqa: F401
 
 
 class MailApi(object):
@@ -61,10 +58,14 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.add_mail_user_with_http_info(email, password, privileges, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.add_mail_user_with_http_info(
+            email, password, privileges, **kwargs
+        )  # noqa: E501
 
-    def add_mail_user_with_http_info(self, email, password, privileges, **kwargs):  # noqa: E501
+    def add_mail_user_with_http_info(
+        self, email, password, privileges, **kwargs
+    ):  # noqa: E501
         """add_mail_user  # noqa: E501
 
         Add a new mail user.  # noqa: E501
@@ -93,40 +94,48 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'email',
-            'password',
-            'privileges'
-        ]
+        all_params = ["email", "password", "privileges"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_mail_user" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'email' is set
-        if self.api_client.client_side_validation and ('email' not in local_var_params or  # noqa: E501
-                                                        local_var_params['email'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `email` when calling `add_mail_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "email" not in local_var_params
+            or local_var_params["email"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `email` when calling `add_mail_user`"
+            )  # noqa: E501
         # verify the required parameter 'password' is set
-        if self.api_client.client_side_validation and ('password' not in local_var_params or  # noqa: E501
-                                                        local_var_params['password'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `password` when calling `add_mail_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "password" not in local_var_params
+            or local_var_params["password"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `password` when calling `add_mail_user`"
+            )  # noqa: E501
         # verify the required parameter 'privileges' is set
-        if self.api_client.client_side_validation and ('privileges' not in local_var_params or  # noqa: E501
-                                                        local_var_params['privileges'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `privileges` when calling `add_mail_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "privileges" not in local_var_params
+            or local_var_params["privileges"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `privileges` when calling `add_mail_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -138,40 +147,50 @@ class MailApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'email' in local_var_params:
-            form_params.append(('email', local_var_params['email']))  # noqa: E501
-        if 'password' in local_var_params:
-            form_params.append(('password', local_var_params['password']))  # noqa: E501
-        if 'privileges' in local_var_params:
-            form_params.append(('privileges', local_var_params['privileges']))  # noqa: E501
+        if "email" in local_var_params:
+            form_params.append(("email", local_var_params["email"]))  # noqa: E501
+        if "password" in local_var_params:
+            form_params.append(("password", local_var_params["password"]))  # noqa: E501
+        if "privileges" in local_var_params:
+            form_params.append(
+                ("privileges", local_var_params["privileges"])
+            )  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/users/add', 'POST',
+            "/mail/users/add",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def add_mail_user_privilege(self, email, privilege, **kwargs):  # noqa: E501
         """add_mail_user_privilege  # noqa: E501
@@ -196,10 +215,14 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.add_mail_user_privilege_with_http_info(email, privilege, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.add_mail_user_privilege_with_http_info(
+            email, privilege, **kwargs
+        )  # noqa: E501
 
-    def add_mail_user_privilege_with_http_info(self, email, privilege, **kwargs):  # noqa: E501
+    def add_mail_user_privilege_with_http_info(
+        self, email, privilege, **kwargs
+    ):  # noqa: E501
         """add_mail_user_privilege  # noqa: E501
 
         Add a privilege to a mail user.  # noqa: E501
@@ -227,35 +250,40 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'email',
-            'privilege'
-        ]
+        all_params = ["email", "privilege"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method add_mail_user_privilege" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'email' is set
-        if self.api_client.client_side_validation and ('email' not in local_var_params or  # noqa: E501
-                                                        local_var_params['email'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `email` when calling `add_mail_user_privilege`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "email" not in local_var_params
+            or local_var_params["email"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `email` when calling `add_mail_user_privilege`"
+            )  # noqa: E501
         # verify the required parameter 'privilege' is set
-        if self.api_client.client_side_validation and ('privilege' not in local_var_params or  # noqa: E501
-                                                        local_var_params['privilege'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `privilege` when calling `add_mail_user_privilege`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "privilege" not in local_var_params
+            or local_var_params["privilege"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `privilege` when calling `add_mail_user_privilege`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -267,38 +295,48 @@ class MailApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'email' in local_var_params:
-            form_params.append(('email', local_var_params['email']))  # noqa: E501
-        if 'privilege' in local_var_params:
-            form_params.append(('privilege', local_var_params['privilege']))  # noqa: E501
+        if "email" in local_var_params:
+            form_params.append(("email", local_var_params["email"]))  # noqa: E501
+        if "privilege" in local_var_params:
+            form_params.append(
+                ("privilege", local_var_params["privilege"])
+            )  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/users/privileges/add', 'POST',
+            "/mail/users/privileges/add",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_mail_aliases(self, **kwargs):  # noqa: E501
         """get_mail_aliases  # noqa: E501
@@ -322,7 +360,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.get_mail_aliases_with_http_info(**kwargs)  # noqa: E501
 
     def get_mail_aliases_with_http_info(self, **kwargs):  # noqa: E501
@@ -352,34 +390,34 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'format'
-        ]
+        all_params = ["format"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_mail_aliases" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'format' in local_var_params and local_var_params['format'] is not None:  # noqa: E501
-            query_params.append(('format', local_var_params['format']))  # noqa: E501
+        if (
+            "format" in local_var_params and local_var_params["format"] is not None
+        ):  # noqa: E501
+            query_params.append(("format", local_var_params["format"]))  # noqa: E501
 
         header_params = {}
 
@@ -388,27 +426,32 @@ class MailApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/aliases', 'GET',
+            "/mail/aliases",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[MailAliasByDomain]',  # noqa: E501
+            response_type="list[MailAliasByDomain]",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_mail_domains(self, **kwargs):  # noqa: E501
         """get_mail_domains  # noqa: E501
@@ -431,7 +474,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.get_mail_domains_with_http_info(**kwargs)  # noqa: E501
 
     def get_mail_domains_with_http_info(self, **kwargs):  # noqa: E501
@@ -460,25 +503,24 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-        ]
+        all_params = []
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_mail_domains" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
@@ -493,27 +535,32 @@ class MailApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/domains', 'GET',
+            "/mail/domains",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_mail_user_privileges(self, **kwargs):  # noqa: E501
         """get_mail_user_privileges  # noqa: E501
@@ -537,7 +584,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.get_mail_user_privileges_with_http_info(**kwargs)  # noqa: E501
 
     def get_mail_user_privileges_with_http_info(self, **kwargs):  # noqa: E501
@@ -567,34 +614,34 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'email'
-        ]
+        all_params = ["email"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_mail_user_privileges" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'email' in local_var_params and local_var_params['email'] is not None:  # noqa: E501
-            query_params.append(('email', local_var_params['email']))  # noqa: E501
+        if (
+            "email" in local_var_params and local_var_params["email"] is not None
+        ):  # noqa: E501
+            query_params.append(("email", local_var_params["email"]))  # noqa: E501
 
         header_params = {}
 
@@ -603,27 +650,32 @@ class MailApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/users/privileges', 'GET',
+            "/mail/users/privileges",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MailUserPrivilege',  # noqa: E501
+            response_type="MailUserPrivilege",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_mail_users(self, **kwargs):  # noqa: E501
         """get_mail_users  # noqa: E501
@@ -647,7 +699,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.get_mail_users_with_http_info(**kwargs)  # noqa: E501
 
     def get_mail_users_with_http_info(self, **kwargs):  # noqa: E501
@@ -677,34 +729,34 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'format'
-        ]
+        all_params = ["format"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_mail_users" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'format' in local_var_params and local_var_params['format'] is not None:  # noqa: E501
-            query_params.append(('format', local_var_params['format']))  # noqa: E501
+        if (
+            "format" in local_var_params and local_var_params["format"] is not None
+        ):  # noqa: E501
+            query_params.append(("format", local_var_params["format"]))  # noqa: E501
 
         header_params = {}
 
@@ -713,27 +765,32 @@ class MailApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/users', 'GET',
+            "/mail/users",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='MailUsersResponse',  # noqa: E501
+            response_type="MailUsersResponse",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def remove_mail_alias(self, address, **kwargs):  # noqa: E501
         """remove_mail_alias  # noqa: E501
@@ -757,7 +814,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.remove_mail_alias_with_http_info(address, **kwargs)  # noqa: E501
 
     def remove_mail_alias_with_http_info(self, address, **kwargs):  # noqa: E501
@@ -787,30 +844,32 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'address'
-        ]
+        all_params = ["address"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method remove_mail_alias" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'address' is set
-        if self.api_client.client_side_validation and ('address' not in local_var_params or  # noqa: E501
-                                                        local_var_params['address'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `address` when calling `remove_mail_alias`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "address" not in local_var_params
+            or local_var_params["address"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `address` when calling `remove_mail_alias`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -822,36 +881,44 @@ class MailApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'address' in local_var_params:
-            form_params.append(('address', local_var_params['address']))  # noqa: E501
+        if "address" in local_var_params:
+            form_params.append(("address", local_var_params["address"]))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/aliases/remove', 'POST',
+            "/mail/aliases/remove",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def remove_mail_user(self, email, **kwargs):  # noqa: E501
         """remove_mail_user  # noqa: E501
@@ -875,7 +942,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.remove_mail_user_with_http_info(email, **kwargs)  # noqa: E501
 
     def remove_mail_user_with_http_info(self, email, **kwargs):  # noqa: E501
@@ -905,30 +972,32 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'email'
-        ]
+        all_params = ["email"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method remove_mail_user" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'email' is set
-        if self.api_client.client_side_validation and ('email' not in local_var_params or  # noqa: E501
-                                                        local_var_params['email'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `email` when calling `remove_mail_user`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "email" not in local_var_params
+            or local_var_params["email"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `email` when calling `remove_mail_user`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -940,36 +1009,44 @@ class MailApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'email' in local_var_params:
-            form_params.append(('email', local_var_params['email']))  # noqa: E501
+        if "email" in local_var_params:
+            form_params.append(("email", local_var_params["email"]))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/users/remove', 'POST',
+            "/mail/users/remove",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def remove_mail_user_privilege(self, email, privilege, **kwargs):  # noqa: E501
         """remove_mail_user_privilege  # noqa: E501
@@ -994,10 +1071,14 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.remove_mail_user_privilege_with_http_info(email, privilege, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.remove_mail_user_privilege_with_http_info(
+            email, privilege, **kwargs
+        )  # noqa: E501
 
-    def remove_mail_user_privilege_with_http_info(self, email, privilege, **kwargs):  # noqa: E501
+    def remove_mail_user_privilege_with_http_info(
+        self, email, privilege, **kwargs
+    ):  # noqa: E501
         """remove_mail_user_privilege  # noqa: E501
 
         Remove a privilege from a mail user.  # noqa: E501
@@ -1025,35 +1106,40 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'email',
-            'privilege'
-        ]
+        all_params = ["email", "privilege"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method remove_mail_user_privilege" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'email' is set
-        if self.api_client.client_side_validation and ('email' not in local_var_params or  # noqa: E501
-                                                        local_var_params['email'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `email` when calling `remove_mail_user_privilege`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "email" not in local_var_params
+            or local_var_params["email"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `email` when calling `remove_mail_user_privilege`"
+            )  # noqa: E501
         # verify the required parameter 'privilege' is set
-        if self.api_client.client_side_validation and ('privilege' not in local_var_params or  # noqa: E501
-                                                        local_var_params['privilege'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `privilege` when calling `remove_mail_user_privilege`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "privilege" not in local_var_params
+            or local_var_params["privilege"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `privilege` when calling `remove_mail_user_privilege`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1065,38 +1151,48 @@ class MailApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'email' in local_var_params:
-            form_params.append(('email', local_var_params['email']))  # noqa: E501
-        if 'privilege' in local_var_params:
-            form_params.append(('privilege', local_var_params['privilege']))  # noqa: E501
+        if "email" in local_var_params:
+            form_params.append(("email", local_var_params["email"]))  # noqa: E501
+        if "privilege" in local_var_params:
+            form_params.append(
+                ("privilege", local_var_params["privilege"])
+            )  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/users/privileges/remove', 'POST',
+            "/mail/users/privileges/remove",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def set_mail_user_password(self, email, password, **kwargs):  # noqa: E501
         """set_mail_user_password  # noqa: E501
@@ -1121,10 +1217,14 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.set_mail_user_password_with_http_info(email, password, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.set_mail_user_password_with_http_info(
+            email, password, **kwargs
+        )  # noqa: E501
 
-    def set_mail_user_password_with_http_info(self, email, password, **kwargs):  # noqa: E501
+    def set_mail_user_password_with_http_info(
+        self, email, password, **kwargs
+    ):  # noqa: E501
         """set_mail_user_password  # noqa: E501
 
         Set a password for a user.  # noqa: E501
@@ -1152,35 +1252,40 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'email',
-            'password'
-        ]
+        all_params = ["email", "password"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method set_mail_user_password" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'email' is set
-        if self.api_client.client_side_validation and ('email' not in local_var_params or  # noqa: E501
-                                                        local_var_params['email'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `email` when calling `set_mail_user_password`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "email" not in local_var_params
+            or local_var_params["email"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `email` when calling `set_mail_user_password`"
+            )  # noqa: E501
         # verify the required parameter 'password' is set
-        if self.api_client.client_side_validation and ('password' not in local_var_params or  # noqa: E501
-                                                        local_var_params['password'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `password` when calling `set_mail_user_password`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "password" not in local_var_params
+            or local_var_params["password"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `password` when calling `set_mail_user_password`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -1192,40 +1297,50 @@ class MailApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'email' in local_var_params:
-            form_params.append(('email', local_var_params['email']))  # noqa: E501
-        if 'password' in local_var_params:
-            form_params.append(('password', local_var_params['password']))  # noqa: E501
+        if "email" in local_var_params:
+            form_params.append(("email", local_var_params["email"]))  # noqa: E501
+        if "password" in local_var_params:
+            form_params.append(("password", local_var_params["password"]))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/users/password', 'POST',
+            "/mail/users/password",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
-    def upsert_mail_alias(self, update_if_exists, address, forwards_to, permitted_senders, **kwargs):  # noqa: E501
+    def upsert_mail_alias(
+        self, update_if_exists, address, forwards_to, permitted_senders, **kwargs
+    ):  # noqa: E501
         """upsert_mail_alias  # noqa: E501
 
         Add or update a mail alias. If updating, you need to set `update_if_exists: 1`.   # noqa: E501
@@ -1250,10 +1365,14 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.upsert_mail_alias_with_http_info(update_if_exists, address, forwards_to, permitted_senders, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.upsert_mail_alias_with_http_info(
+            update_if_exists, address, forwards_to, permitted_senders, **kwargs
+        )  # noqa: E501
 
-    def upsert_mail_alias_with_http_info(self, update_if_exists, address, forwards_to, permitted_senders, **kwargs):  # noqa: E501
+    def upsert_mail_alias_with_http_info(
+        self, update_if_exists, address, forwards_to, permitted_senders, **kwargs
+    ):  # noqa: E501
         """upsert_mail_alias  # noqa: E501
 
         Add or update a mail alias. If updating, you need to set `update_if_exists: 1`.   # noqa: E501
@@ -1283,46 +1402,65 @@ class MailApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'update_if_exists',
-            'address',
-            'forwards_to',
-            'permitted_senders'
-        ]
+        all_params = ["update_if_exists", "address", "forwards_to", "permitted_senders"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method upsert_mail_alias" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'update_if_exists' is set
-        if self.api_client.client_side_validation and ('update_if_exists' not in local_var_params or  # noqa: E501
-                                                        local_var_params['update_if_exists'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `update_if_exists` when calling `upsert_mail_alias`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "update_if_exists" not in local_var_params
+            or local_var_params["update_if_exists"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `update_if_exists` when calling `upsert_mail_alias`"
+            )  # noqa: E501
         # verify the required parameter 'address' is set
-        if self.api_client.client_side_validation and ('address' not in local_var_params or  # noqa: E501
-                                                        local_var_params['address'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `address` when calling `upsert_mail_alias`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "address" not in local_var_params
+            or local_var_params["address"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `address` when calling `upsert_mail_alias`"
+            )  # noqa: E501
         # verify the required parameter 'forwards_to' is set
-        if self.api_client.client_side_validation and ('forwards_to' not in local_var_params or  # noqa: E501
-                                                        local_var_params['forwards_to'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `forwards_to` when calling `upsert_mail_alias`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "forwards_to" not in local_var_params
+            or local_var_params["forwards_to"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `forwards_to` when calling `upsert_mail_alias`"
+            )  # noqa: E501
 
-        if self.api_client.client_side_validation and 'update_if_exists' in local_var_params and local_var_params['update_if_exists'] > 1:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `update_if_exists` when calling `upsert_mail_alias`, must be a value less than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and 'update_if_exists' in local_var_params and local_var_params['update_if_exists'] < 0:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `update_if_exists` when calling `upsert_mail_alias`, must be a value greater than or equal to `0`")  # noqa: E501
+        if (
+            self.api_client.client_side_validation
+            and "update_if_exists" in local_var_params
+            and local_var_params["update_if_exists"] > 1
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `update_if_exists` when calling `upsert_mail_alias`, must be a value less than or equal to `1`"
+            )  # noqa: E501
+        if (
+            self.api_client.client_side_validation
+            and "update_if_exists" in local_var_params
+            and local_var_params["update_if_exists"] < 0
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Invalid value for parameter `update_if_exists` when calling `upsert_mail_alias`, must be a value greater than or equal to `0`"
+            )  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1333,39 +1471,53 @@ class MailApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'update_if_exists' in local_var_params:
-            form_params.append(('update_if_exists', local_var_params['update_if_exists']))  # noqa: E501
-        if 'address' in local_var_params:
-            form_params.append(('address', local_var_params['address']))  # noqa: E501
-        if 'forwards_to' in local_var_params:
-            form_params.append(('forwards_to', local_var_params['forwards_to']))  # noqa: E501
-        if 'permitted_senders' in local_var_params:
-            form_params.append(('permitted_senders', local_var_params['permitted_senders']))  # noqa: E501
+        if "update_if_exists" in local_var_params:
+            form_params.append(
+                ("update_if_exists", local_var_params["update_if_exists"])
+            )  # noqa: E501
+        if "address" in local_var_params:
+            form_params.append(("address", local_var_params["address"]))  # noqa: E501
+        if "forwards_to" in local_var_params:
+            form_params.append(
+                ("forwards_to", local_var_params["forwards_to"])
+            )  # noqa: E501
+        if "permitted_senders" in local_var_params:
+            form_params.append(
+                ("permitted_senders", local_var_params["permitted_senders"])
+            )  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/mail/aliases/add', 'POST',
+            "/mail/aliases/add",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

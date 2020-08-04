@@ -19,10 +19,7 @@ import re  # noqa: F401
 import six
 
 from mailinaboxapi.api_client import ApiClient
-from mailinaboxapi.exceptions import (  # noqa: F401
-    ApiTypeError,
-    ApiValueError
-)
+from mailinaboxapi.exceptions import ApiTypeError, ApiValueError  # noqa: F401
 
 
 class SSLApi(object):
@@ -60,10 +57,14 @@ class SSLApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.generate_sslcsr_with_http_info(domain, countrycode, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.generate_sslcsr_with_http_info(
+            domain, countrycode, **kwargs
+        )  # noqa: E501
 
-    def generate_sslcsr_with_http_info(self, domain, countrycode, **kwargs):  # noqa: E501
+    def generate_sslcsr_with_http_info(
+        self, domain, countrycode, **kwargs
+    ):  # noqa: E501
         """generate_sslcsr  # noqa: E501
 
         Generate a Certificate Signing Request (CSR) for a domain & country code.   # noqa: E501
@@ -91,41 +92,46 @@ class SSLApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain',
-            'countrycode'
-        ]
+        all_params = ["domain", "countrycode"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method generate_sslcsr" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `generate_sslcsr`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `generate_sslcsr`"
+            )  # noqa: E501
         # verify the required parameter 'countrycode' is set
-        if self.api_client.client_side_validation and ('countrycode' not in local_var_params or  # noqa: E501
-                                                        local_var_params['countrycode'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `countrycode` when calling `generate_sslcsr`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "countrycode" not in local_var_params
+            or local_var_params["countrycode"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `countrycode` when calling `generate_sslcsr`"
+            )  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'domain' in local_var_params:
-            path_params['domain'] = local_var_params['domain']  # noqa: E501
+        if "domain" in local_var_params:
+            path_params["domain"] = local_var_params["domain"]  # noqa: E501
 
         query_params = []
 
@@ -133,36 +139,46 @@ class SSLApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'countrycode' in local_var_params:
-            form_params.append(('countrycode', local_var_params['countrycode']))  # noqa: E501
+        if "countrycode" in local_var_params:
+            form_params.append(
+                ("countrycode", local_var_params["countrycode"])
+            )  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/ssl/csr/{domain}', 'POST',
+            "/ssl/csr/{domain}",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def get_ssl_status(self, **kwargs):  # noqa: E501
         """get_ssl_status  # noqa: E501
@@ -185,7 +201,7 @@ class SSLApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.get_ssl_status_with_http_info(**kwargs)  # noqa: E501
 
     def get_ssl_status_with_http_info(self, **kwargs):  # noqa: E501
@@ -214,25 +230,24 @@ class SSLApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-        ]
+        all_params = []
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method get_ssl_status" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
@@ -247,27 +262,32 @@ class SSLApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/ssl/status', 'GET',
+            "/ssl/status",
+            "GET",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SSLStatusResponse',  # noqa: E501
+            response_type="SSLStatusResponse",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def install_ssl_certificate(self, domain, cert, chain, **kwargs):  # noqa: E501
         """install_ssl_certificate  # noqa: E501
@@ -293,10 +313,14 @@ class SSLApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        return self.install_ssl_certificate_with_http_info(domain, cert, chain, **kwargs)  # noqa: E501
+        kwargs["_return_http_data_only"] = True
+        return self.install_ssl_certificate_with_http_info(
+            domain, cert, chain, **kwargs
+        )  # noqa: E501
 
-    def install_ssl_certificate_with_http_info(self, domain, cert, chain, **kwargs):  # noqa: E501
+    def install_ssl_certificate_with_http_info(
+        self, domain, cert, chain, **kwargs
+    ):  # noqa: E501
         """install_ssl_certificate  # noqa: E501
 
         Install a custom certificate. The chain certificate is optional.   # noqa: E501
@@ -325,40 +349,48 @@ class SSLApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-            'domain',
-            'cert',
-            'chain'
-        ]
+        all_params = ["domain", "cert", "chain"]
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method install_ssl_certificate" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
         # verify the required parameter 'domain' is set
-        if self.api_client.client_side_validation and ('domain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `domain` when calling `install_ssl_certificate`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "domain" not in local_var_params
+            or local_var_params["domain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `domain` when calling `install_ssl_certificate`"
+            )  # noqa: E501
         # verify the required parameter 'cert' is set
-        if self.api_client.client_side_validation and ('cert' not in local_var_params or  # noqa: E501
-                                                        local_var_params['cert'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `cert` when calling `install_ssl_certificate`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "cert" not in local_var_params
+            or local_var_params["cert"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `cert` when calling `install_ssl_certificate`"
+            )  # noqa: E501
         # verify the required parameter 'chain' is set
-        if self.api_client.client_side_validation and ('chain' not in local_var_params or  # noqa: E501
-                                                        local_var_params['chain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `chain` when calling `install_ssl_certificate`")  # noqa: E501
+        if self.api_client.client_side_validation and (
+            "chain" not in local_var_params
+            or local_var_params["chain"] is None  # noqa: E501
+        ):  # noqa: E501
+            raise ApiValueError(
+                "Missing the required parameter `chain` when calling `install_ssl_certificate`"
+            )  # noqa: E501
 
         collection_formats = {}
 
@@ -370,40 +402,48 @@ class SSLApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'domain' in local_var_params:
-            form_params.append(('domain', local_var_params['domain']))  # noqa: E501
-        if 'cert' in local_var_params:
-            form_params.append(('cert', local_var_params['cert']))  # noqa: E501
-        if 'chain' in local_var_params:
-            form_params.append(('chain', local_var_params['chain']))  # noqa: E501
+        if "domain" in local_var_params:
+            form_params.append(("domain", local_var_params["domain"]))  # noqa: E501
+        if "cert" in local_var_params:
+            form_params.append(("cert", local_var_params["cert"]))  # noqa: E501
+        if "chain" in local_var_params:
+            form_params.append(("chain", local_var_params["chain"]))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/html"]
+        )  # noqa: E501
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/x-www-form-urlencoded'])  # noqa: E501
+        header_params[
+            "Content-Type"
+        ] = self.api_client.select_header_content_type(  # noqa: E501
+            ["application/x-www-form-urlencoded"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/ssl/install', 'POST',
+            "/ssl/install",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type="str",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )
 
     def provision_ssl_certificates(self, **kwargs):  # noqa: E501
         """provision_ssl_certificates  # noqa: E501
@@ -426,7 +466,7 @@ class SSLApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs["_return_http_data_only"] = True
         return self.provision_ssl_certificates_with_http_info(**kwargs)  # noqa: E501
 
     def provision_ssl_certificates_with_http_info(self, **kwargs):  # noqa: E501
@@ -455,25 +495,24 @@ class SSLApi(object):
 
         local_var_params = locals()
 
-        all_params = [
-        ]
+        all_params = []
         all_params.extend(
             [
-                'async_req',
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout'
+                "async_req",
+                "_return_http_data_only",
+                "_preload_content",
+                "_request_timeout",
             ]
         )
 
-        for key, val in six.iteritems(local_var_params['kwargs']):
+        for key, val in six.iteritems(local_var_params["kwargs"]):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
                     " to method provision_ssl_certificates" % key
                 )
             local_var_params[key] = val
-        del local_var_params['kwargs']
+        del local_var_params["kwargs"]
 
         collection_formats = {}
 
@@ -488,24 +527,29 @@ class SSLApi(object):
 
         body_params = None
         # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/html'])  # noqa: E501
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json", "text/html"]
+        )  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth']  # noqa: E501
+        auth_settings = ["basicAuth"]  # noqa: E501
 
         return self.api_client.call_api(
-            '/ssl/provision', 'POST',
+            "/ssl/provision",
+            "POST",
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SSLCertificatesProvisionResponse',  # noqa: E501
+            response_type="SSLCertificatesProvisionResponse",  # noqa: E501
             auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=local_var_params.get("async_req"),
+            _return_http_data_only=local_var_params.get(
+                "_return_http_data_only"
+            ),  # noqa: E501
+            _preload_content=local_var_params.get("_preload_content", True),
+            _request_timeout=local_var_params.get("_request_timeout"),
+            collection_formats=collection_formats,
+        )

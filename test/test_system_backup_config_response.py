@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.system_backup_config_response import SystemBackupConfigResponse  # noqa: E501
+from mailinaboxapi.models.system_backup_config_response import (
+    SystemBackupConfigResponse,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestSystemBackupConfigResponse(unittest.TestCase):
     """SystemBackupConfigResponse unit test stubs"""
@@ -35,24 +38,24 @@ class TestSystemBackupConfigResponse(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.system_backup_config_response.SystemBackupConfigResponse()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return SystemBackupConfigResponse(
-                enc_pw_file = '/home/user-data/backup/secret_key.txt', 
-                file_target_directory = '/home/user-data/backup/encrypted', 
-                min_age_in_days = 3, 
-                ssh_pub_key = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDb root@box.example.com\n', 
-                target = 's3://s3.eu-central-1.amazonaws.com/box-example-com', 
-                target_user = '0', 
-                target_pass = '0'
+                enc_pw_file="/home/user-data/backup/secret_key.txt",
+                file_target_directory="/home/user-data/backup/encrypted",
+                min_age_in_days=3,
+                ssh_pub_key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDb root@box.example.com\n",
+                target="s3://s3.eu-central-1.amazonaws.com/box-example-com",
+                target_user="0",
+                target_pass="0",
             )
-        else :
+        else:
             return SystemBackupConfigResponse(
-                enc_pw_file = '/home/user-data/backup/secret_key.txt',
-                file_target_directory = '/home/user-data/backup/encrypted',
-                min_age_in_days = 3,
-                ssh_pub_key = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDb root@box.example.com\n',
-                target = 's3://s3.eu-central-1.amazonaws.com/box-example-com',
-        )
+                enc_pw_file="/home/user-data/backup/secret_key.txt",
+                file_target_directory="/home/user-data/backup/encrypted",
+                min_age_in_days=3,
+                ssh_pub_key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDb root@box.example.com\n",
+                target="s3://s3.eu-central-1.amazonaws.com/box-example-com",
+            )
 
     def testSystemBackupConfigResponse(self):
         """Test SystemBackupConfigResponse"""
@@ -60,5 +63,5 @@ class TestSystemBackupConfigResponse(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -33,17 +33,13 @@ class SSLStatusResponse(object):
       attribute_map (dict): The key is attribute name
                             and the value is json key in definition.
     """
-    openapi_types = {
-        'can_provision': 'list[str]',
-        'status': 'list[SSLStatus]'
-    }
+    openapi_types = {"can_provision": "list[str]", "status": "list[SSLStatus]"}
 
-    attribute_map = {
-        'can_provision': 'can_provision',
-        'status': 'status'
-    }
+    attribute_map = {"can_provision": "can_provision", "status": "status"}
 
-    def __init__(self, can_provision=None, status=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(
+        self, can_provision=None, status=None, local_vars_configuration=None
+    ):  # noqa: E501
         """SSLStatusResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,8 +70,13 @@ class SSLStatusResponse(object):
         :param can_provision: The can_provision of this SSLStatusResponse.  # noqa: E501
         :type: list[str]
         """
-        if self.local_vars_configuration.client_side_validation and can_provision is None:  # noqa: E501
-            raise ValueError("Invalid value for `can_provision`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation
+            and can_provision is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `can_provision`, must not be `None`"
+            )  # noqa: E501
 
         self._can_provision = can_provision
 
@@ -97,8 +98,12 @@ class SSLStatusResponse(object):
         :param status: The status of this SSLStatusResponse.  # noqa: E501
         :type: list[SSLStatus]
         """
-        if self.local_vars_configuration.client_side_validation and status is None:  # noqa: E501
-            raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
+        if (
+            self.local_vars_configuration.client_side_validation and status is None
+        ):  # noqa: E501
+            raise ValueError(
+                "Invalid value for `status`, must not be `None`"
+            )  # noqa: E501
 
         self._status = status
 
@@ -109,18 +114,20 @@ class SSLStatusResponse(object):
         for attr, _ in six.iteritems(self.openapi_types):
             value = getattr(self, attr)
             if isinstance(value, list):
-                result[attr] = list(map(
-                    lambda x: x.to_dict() if hasattr(x, "to_dict") else x,
-                    value
-                ))
+                result[attr] = list(
+                    map(lambda x: x.to_dict() if hasattr(x, "to_dict") else x, value)
+                )
             elif hasattr(value, "to_dict"):
                 result[attr] = value.to_dict()
             elif isinstance(value, dict):
-                result[attr] = dict(map(
-                    lambda item: (item[0], item[1].to_dict())
-                    if hasattr(item[1], "to_dict") else item,
-                    value.items()
-                ))
+                result[attr] = dict(
+                    map(
+                        lambda item: (item[0], item[1].to_dict())
+                        if hasattr(item[1], "to_dict")
+                        else item,
+                        value.items(),
+                    )
+                )
             else:
                 result[attr] = value
 

@@ -17,8 +17,11 @@ import unittest
 import datetime
 
 import mailinaboxapi
-from mailinaboxapi.models.system_status_response import SystemStatusResponse  # noqa: E501
+from mailinaboxapi.models.system_status_response import (
+    SystemStatusResponse,
+)  # noqa: E501
 from mailinaboxapi.rest import ApiException
+
 
 class TestSystemStatusResponse(unittest.TestCase):
     """SystemStatusResponse unit test stubs"""
@@ -35,12 +38,10 @@ class TestSystemStatusResponse(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.system_status_response.SystemStatusResponse()  # noqa: E501
-        if include_optional :
-            return SystemStatusResponse(
-            )
-        else :
-            return SystemStatusResponse(
-        )
+        if include_optional:
+            return SystemStatusResponse()
+        else:
+            return SystemStatusResponse()
 
     def testSystemStatusResponse(self):
         """Test SystemStatusResponse"""
@@ -48,5 +49,5 @@ class TestSystemStatusResponse(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

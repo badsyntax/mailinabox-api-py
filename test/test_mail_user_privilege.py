@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.mail_user_privilege import MailUserPrivilege  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestMailUserPrivilege(unittest.TestCase):
     """MailUserPrivilege unit test stubs"""
 
@@ -35,12 +36,10 @@ class TestMailUserPrivilege(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.mail_user_privilege.MailUserPrivilege()  # noqa: E501
-        if include_optional :
-            return MailUserPrivilege(
-            )
-        else :
-            return MailUserPrivilege(
-        )
+        if include_optional:
+            return MailUserPrivilege()
+        else:
+            return MailUserPrivilege()
 
     def testMailUserPrivilege(self):
         """Test MailUserPrivilege"""
@@ -48,5 +47,5 @@ class TestMailUserPrivilege(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

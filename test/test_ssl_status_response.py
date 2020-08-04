@@ -20,6 +20,7 @@ import mailinaboxapi
 from mailinaboxapi.models.ssl_status_response import SSLStatusResponse  # noqa: E501
 from mailinaboxapi.rest import ApiException
 
+
 class TestSSLStatusResponse(unittest.TestCase):
     """SSLStatusResponse unit test stubs"""
 
@@ -35,30 +36,28 @@ class TestSSLStatusResponse(unittest.TestCase):
             params are included, when True both required and
             optional params are included """
         # model = mailinaboxapi.models.ssl_status_response.SSLStatusResponse()  # noqa: E501
-        if include_optional :
+        if include_optional:
             return SSLStatusResponse(
-                can_provision = [
-                    '0'
-                    ], 
-                status = [
+                can_provision=["0"],
+                status=[
                     mailinaboxapi.models.ssl_status.SSLStatus(
-                        domain = 'example.com', 
-                        status = 'success', 
-                        text = 'Signed & valid. The certificate expires in 87 days on 10/28/20.', )
-                    ]
+                        domain="example.com",
+                        status="success",
+                        text="Signed & valid. The certificate expires in 87 days on 10/28/20.",
+                    )
+                ],
             )
-        else :
+        else:
             return SSLStatusResponse(
-                can_provision = [
-                    '0'
-                    ],
-                status = [
+                can_provision=["0"],
+                status=[
                     mailinaboxapi.models.ssl_status.SSLStatus(
-                        domain = 'example.com', 
-                        status = 'success', 
-                        text = 'Signed & valid. The certificate expires in 87 days on 10/28/20.', )
-                    ],
-        )
+                        domain="example.com",
+                        status="success",
+                        text="Signed & valid. The certificate expires in 87 days on 10/28/20.",
+                    )
+                ],
+            )
 
     def testSSLStatusResponse(self):
         """Test SSLStatusResponse"""
@@ -66,5 +65,5 @@ class TestSSLStatusResponse(unittest.TestCase):
         inst_req_and_optional = self.make_instance(include_optional=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
