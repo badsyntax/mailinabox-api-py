@@ -355,7 +355,9 @@ conf = mailinabox_api.Configuration(
             "OS: {env}\n"
             "Python Version: {pyversion}\n"
             "Version of the API: 0.46.0\n"
-            "SDK Package Version: 0.0.5".format(env=sys.platform, pyversion=sys.version)
+            "SDK Package Version: 0.46.4".format(
+                env=sys.platform, pyversion=sys.version
+            )
         )
 
     def get_host_settings(self):

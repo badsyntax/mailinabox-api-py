@@ -22,7 +22,7 @@ def get_long_description():
 
 
 NAME = "mailinabox-api"
-VERSION = "0.0.5"
+VERSION = "0.46.4"
 # To install the library, run the following
 #
 # python setup.py install

@@ -15,7 +15,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.0.5"
+__version__ = "0.46.4"
 
 # import apis into sdk package
 from mailinabox_api.api.dns_api import DNSApi
