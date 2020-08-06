@@ -4,16 +4,16 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_web_domains**](WebApi.md#get_web_domains) | **GET** /web/domains | 
-[**update_web**](WebApi.md#update_web) | **POST** /web/update | 
+[**get_web_domains**](WebApi.md#get_web_domains) | **GET** /web/domains | Get web domains
+[**update_web**](WebApi.md#update_web) | **POST** /web/update | Update web
 
 
 # **get_web_domains**
 > list[WebDomain] get_web_domains()
 
+Get web domains
 
-
-Retrieve all static web domains.
+Returns all static web domains.
 
 ### Example
 
@@ -47,6 +47,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.WebApi(api_client)
     
     try:
+        # Get web domains
         api_response = api_instance.get_web_domains()
         pprint(api_response)
     except ApiException as e:
@@ -80,9 +81,9 @@ This endpoint does not need any parameter.
 # **update_web**
 > str update_web()
 
+Update web
 
-
-Update static websites, used for updating domain root directories.
+Updates static websites, used for updating domain root directories.
 
 ### Example
 
@@ -116,6 +117,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.WebApi(api_client)
     
     try:
+        # Update web
         api_response = api_instance.update_web()
         pprint(api_response)
     except ApiException as e:

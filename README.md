@@ -4,8 +4,8 @@
 
 Python client SDK for the Mail-in-a-Box API.
 
-- API version: 0.46.0
-- Package version: 0.46.4
+- API version: 0.47.0
+- Package version: 0.47.0
 
 https://pypi.org/project/mailinabox-api
 
@@ -79,15 +79,15 @@ configuration = mailinabox_api.Configuration(
 with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mailinabox_api.DNSApi(api_client)
-    domain = 'domain_example' # str | DNS record domain
-    type = mailinabox_api.DNSRecordType() # DNSRecordType | Record type
+    qname = 'qname_example' # str | DNS query name.
     body = 'body_example' # str | The value of the DNS record.
 
     try:
-        api_response = api_instance.add_dns_custom_record(domain, type, body)
+        # Add DNS custom A record
+        api_response = api_instance.add_dns_custom_a_record(qname, body)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DNSApi->add_dns_custom_record: %s\n" % e)
+        print("Exception when calling DNSApi->add_dns_custom_a_record: %s\n" % e)
     
 ```
 
@@ -97,50 +97,50 @@ All URIs are relative to *https://box.example.com/admin*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DNSApi* | [**add_dns_custom_record**](docs/DNSApi.md#add_dns_custom_record) | **POST** /dns/custom/{domain}/{type} | 
-*DNSApi* | [**add_dns_custom_record_for_type_a**](docs/DNSApi.md#add_dns_custom_record_for_type_a) | **POST** /dns/custom/{domain} | 
-*DNSApi* | [**add_dns_secondary_nameserver**](docs/DNSApi.md#add_dns_secondary_nameserver) | **POST** /dns/secondary-nameserver | 
-*DNSApi* | [**get_dns_custom_records**](docs/DNSApi.md#get_dns_custom_records) | **GET** /dns/custom | 
-*DNSApi* | [**get_dns_custom_records_for_domain_and_type**](docs/DNSApi.md#get_dns_custom_records_for_domain_and_type) | **GET** /dns/custom/{domain}/{type} | 
-*DNSApi* | [**get_dns_custom_records_for_domain_and_type_a**](docs/DNSApi.md#get_dns_custom_records_for_domain_and_type_a) | **GET** /dns/custom/{domain} | 
-*DNSApi* | [**get_dns_dump**](docs/DNSApi.md#get_dns_dump) | **GET** /dns/dump | 
-*DNSApi* | [**get_dns_secondary_nameserver**](docs/DNSApi.md#get_dns_secondary_nameserver) | **GET** /dns/secondary-nameserver | 
-*DNSApi* | [**get_dns_zones**](docs/DNSApi.md#get_dns_zones) | **GET** /dns/zones | 
-*DNSApi* | [**remove_dns_custom_record**](docs/DNSApi.md#remove_dns_custom_record) | **DELETE** /dns/custom/{domain}/{type} | 
-*DNSApi* | [**remove_dns_custom_record_for_type_a**](docs/DNSApi.md#remove_dns_custom_record_for_type_a) | **DELETE** /dns/custom/{domain} | 
-*DNSApi* | [**update_dns**](docs/DNSApi.md#update_dns) | **POST** /dns/update | 
-*DNSApi* | [**update_dns_custom_record**](docs/DNSApi.md#update_dns_custom_record) | **PUT** /dns/custom/{domain}/{type} | 
-*DNSApi* | [**update_dns_custom_record_for_type_a**](docs/DNSApi.md#update_dns_custom_record_for_type_a) | **PUT** /dns/custom/{domain} | 
-*MailApi* | [**add_mail_user**](docs/MailApi.md#add_mail_user) | **POST** /mail/users/add | 
-*MailApi* | [**add_mail_user_privilege**](docs/MailApi.md#add_mail_user_privilege) | **POST** /mail/users/privileges/add | 
-*MailApi* | [**get_mail_aliases**](docs/MailApi.md#get_mail_aliases) | **GET** /mail/aliases | 
-*MailApi* | [**get_mail_domains**](docs/MailApi.md#get_mail_domains) | **GET** /mail/domains | 
-*MailApi* | [**get_mail_user_privileges**](docs/MailApi.md#get_mail_user_privileges) | **GET** /mail/users/privileges | 
-*MailApi* | [**get_mail_users**](docs/MailApi.md#get_mail_users) | **GET** /mail/users | 
-*MailApi* | [**remove_mail_alias**](docs/MailApi.md#remove_mail_alias) | **POST** /mail/aliases/remove | 
-*MailApi* | [**remove_mail_user**](docs/MailApi.md#remove_mail_user) | **POST** /mail/users/remove | 
-*MailApi* | [**remove_mail_user_privilege**](docs/MailApi.md#remove_mail_user_privilege) | **POST** /mail/users/privileges/remove | 
-*MailApi* | [**set_mail_user_password**](docs/MailApi.md#set_mail_user_password) | **POST** /mail/users/password | 
-*MailApi* | [**upsert_mail_alias**](docs/MailApi.md#upsert_mail_alias) | **POST** /mail/aliases/add | 
-*SSLApi* | [**generate_sslcsr**](docs/SSLApi.md#generate_sslcsr) | **POST** /ssl/csr/{domain} | 
-*SSLApi* | [**get_ssl_status**](docs/SSLApi.md#get_ssl_status) | **GET** /ssl/status | 
-*SSLApi* | [**install_ssl_certificate**](docs/SSLApi.md#install_ssl_certificate) | **POST** /ssl/install | 
-*SSLApi* | [**provision_ssl_certificates**](docs/SSLApi.md#provision_ssl_certificates) | **POST** /ssl/provision | 
-*SystemApi* | [**get_system_backup_config**](docs/SystemApi.md#get_system_backup_config) | **GET** /system/backup/config | 
-*SystemApi* | [**get_system_backup_status**](docs/SystemApi.md#get_system_backup_status) | **GET** /system/backup/status | 
-*SystemApi* | [**get_system_privacy_status**](docs/SystemApi.md#get_system_privacy_status) | **GET** /system/privacy | 
-*SystemApi* | [**get_system_reboot_status**](docs/SystemApi.md#get_system_reboot_status) | **GET** /system/reboot | 
-*SystemApi* | [**get_system_status**](docs/SystemApi.md#get_system_status) | **POST** /system/status | 
-*SystemApi* | [**get_system_updates**](docs/SystemApi.md#get_system_updates) | **GET** /system/updates | 
-*SystemApi* | [**get_system_upstream_version**](docs/SystemApi.md#get_system_upstream_version) | **POST** /system/latest-upstream-version | 
-*SystemApi* | [**get_system_version**](docs/SystemApi.md#get_system_version) | **GET** /system/version | 
-*SystemApi* | [**reboot_system**](docs/SystemApi.md#reboot_system) | **POST** /system/reboot | 
-*SystemApi* | [**update_system_backup_config**](docs/SystemApi.md#update_system_backup_config) | **POST** /system/backup/config | 
-*SystemApi* | [**update_system_packages**](docs/SystemApi.md#update_system_packages) | **POST** /system/update-packages | 
-*SystemApi* | [**update_system_privacy**](docs/SystemApi.md#update_system_privacy) | **POST** /system/privacy | 
-*UserApi* | [**get_me**](docs/UserApi.md#get_me) | **GET** /me | 
-*WebApi* | [**get_web_domains**](docs/WebApi.md#get_web_domains) | **GET** /web/domains | 
-*WebApi* | [**update_web**](docs/WebApi.md#update_web) | **POST** /web/update | 
+*DNSApi* | [**add_dns_custom_a_record**](docs/DNSApi.md#add_dns_custom_a_record) | **POST** /dns/custom/{qname} | Add DNS custom A record
+*DNSApi* | [**add_dns_custom_record**](docs/DNSApi.md#add_dns_custom_record) | **POST** /dns/custom/{qname}/{rtype} | Add DNS custom record
+*DNSApi* | [**add_dns_secondary_nameserver**](docs/DNSApi.md#add_dns_secondary_nameserver) | **POST** /dns/secondary-nameserver | Add DNS secondary nameserver
+*DNSApi* | [**get_dns_custom_a_records_for_q_name**](docs/DNSApi.md#get_dns_custom_a_records_for_q_name) | **GET** /dns/custom/{qname} | Get DNS custom A records
+*DNSApi* | [**get_dns_custom_records**](docs/DNSApi.md#get_dns_custom_records) | **GET** /dns/custom | Get DNS custom records
+*DNSApi* | [**get_dns_custom_records_for_q_name_and_type**](docs/DNSApi.md#get_dns_custom_records_for_q_name_and_type) | **GET** /dns/custom/{qname}/{rtype} | Get DNS custom records
+*DNSApi* | [**get_dns_dump**](docs/DNSApi.md#get_dns_dump) | **GET** /dns/dump | Get DNS dump
+*DNSApi* | [**get_dns_secondary_nameserver**](docs/DNSApi.md#get_dns_secondary_nameserver) | **GET** /dns/secondary-nameserver | Get DNS secondary nameserver
+*DNSApi* | [**get_dns_zones**](docs/DNSApi.md#get_dns_zones) | **GET** /dns/zones | Get DNS zones
+*DNSApi* | [**remove_dns_custom_a_record**](docs/DNSApi.md#remove_dns_custom_a_record) | **DELETE** /dns/custom/{qname} | Remove DNS custom A record
+*DNSApi* | [**remove_dns_custom_record**](docs/DNSApi.md#remove_dns_custom_record) | **DELETE** /dns/custom/{qname}/{rtype} | Remove DNS custom record
+*DNSApi* | [**update_dns**](docs/DNSApi.md#update_dns) | **POST** /dns/update | Update DNS
+*DNSApi* | [**update_dns_custom_a_record**](docs/DNSApi.md#update_dns_custom_a_record) | **PUT** /dns/custom/{qname} | Update DNS custom A record
+*DNSApi* | [**update_dns_custom_record**](docs/DNSApi.md#update_dns_custom_record) | **PUT** /dns/custom/{qname}/{rtype} | Update DNS custom record
+*MailApi* | [**add_mail_user**](docs/MailApi.md#add_mail_user) | **POST** /mail/users/add | Add mail user
+*MailApi* | [**add_mail_user_privilege**](docs/MailApi.md#add_mail_user_privilege) | **POST** /mail/users/privileges/add | Add mail user privilege
+*MailApi* | [**get_mail_aliases**](docs/MailApi.md#get_mail_aliases) | **GET** /mail/aliases | Get mail aliases
+*MailApi* | [**get_mail_domains**](docs/MailApi.md#get_mail_domains) | **GET** /mail/domains | Get mail domains
+*MailApi* | [**get_mail_user_privileges**](docs/MailApi.md#get_mail_user_privileges) | **GET** /mail/users/privileges | Get mail user privileges
+*MailApi* | [**get_mail_users**](docs/MailApi.md#get_mail_users) | **GET** /mail/users | Get mail users
+*MailApi* | [**remove_mail_alias**](docs/MailApi.md#remove_mail_alias) | **POST** /mail/aliases/remove | Remove mail alias
+*MailApi* | [**remove_mail_user**](docs/MailApi.md#remove_mail_user) | **POST** /mail/users/remove | Remove mail user
+*MailApi* | [**remove_mail_user_privilege**](docs/MailApi.md#remove_mail_user_privilege) | **POST** /mail/users/privileges/remove | Remove mail user privilege
+*MailApi* | [**set_mail_user_password**](docs/MailApi.md#set_mail_user_password) | **POST** /mail/users/password | Set mail user password
+*MailApi* | [**upsert_mail_alias**](docs/MailApi.md#upsert_mail_alias) | **POST** /mail/aliases/add | Upsert mail alias
+*SSLApi* | [**generate_sslcsr**](docs/SSLApi.md#generate_sslcsr) | **POST** /ssl/csr/{domain} | Generate SSL CSR
+*SSLApi* | [**get_ssl_status**](docs/SSLApi.md#get_ssl_status) | **GET** /ssl/status | Get SSL status
+*SSLApi* | [**install_ssl_certificate**](docs/SSLApi.md#install_ssl_certificate) | **POST** /ssl/install | Install SSL certificate
+*SSLApi* | [**provision_ssl_certificates**](docs/SSLApi.md#provision_ssl_certificates) | **POST** /ssl/provision | Provision SSL certificates
+*SystemApi* | [**get_system_backup_config**](docs/SystemApi.md#get_system_backup_config) | **GET** /system/backup/config | Get system backup config
+*SystemApi* | [**get_system_backup_status**](docs/SystemApi.md#get_system_backup_status) | **GET** /system/backup/status | Get system backup status
+*SystemApi* | [**get_system_privacy_status**](docs/SystemApi.md#get_system_privacy_status) | **GET** /system/privacy | Get system privacy status
+*SystemApi* | [**get_system_reboot_status**](docs/SystemApi.md#get_system_reboot_status) | **GET** /system/reboot | Get system reboot status
+*SystemApi* | [**get_system_status**](docs/SystemApi.md#get_system_status) | **POST** /system/status | Get system status
+*SystemApi* | [**get_system_updates**](docs/SystemApi.md#get_system_updates) | **GET** /system/updates | Get system updates
+*SystemApi* | [**get_system_upstream_version**](docs/SystemApi.md#get_system_upstream_version) | **POST** /system/latest-upstream-version | Get system upstream version
+*SystemApi* | [**get_system_version**](docs/SystemApi.md#get_system_version) | **GET** /system/version | Get system version
+*SystemApi* | [**reboot_system**](docs/SystemApi.md#reboot_system) | **POST** /system/reboot | Reboot system
+*SystemApi* | [**update_system_backup_config**](docs/SystemApi.md#update_system_backup_config) | **POST** /system/backup/config | Update system backup config
+*SystemApi* | [**update_system_packages**](docs/SystemApi.md#update_system_packages) | **POST** /system/update-packages | Update system packages
+*SystemApi* | [**update_system_privacy**](docs/SystemApi.md#update_system_privacy) | **POST** /system/privacy | Update system privacy
+*UserApi* | [**get_me**](docs/UserApi.md#get_me) | **GET** /me | Get user information
+*WebApi* | [**get_web_domains**](docs/WebApi.md#get_web_domains) | **GET** /web/domains | Get web domains
+*WebApi* | [**update_web**](docs/WebApi.md#update_web) | **POST** /web/update | Update web
 
 
 ## Documentation For Models

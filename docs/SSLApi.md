@@ -4,18 +4,18 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generate_sslcsr**](SSLApi.md#generate_sslcsr) | **POST** /ssl/csr/{domain} | 
-[**get_ssl_status**](SSLApi.md#get_ssl_status) | **GET** /ssl/status | 
-[**install_ssl_certificate**](SSLApi.md#install_ssl_certificate) | **POST** /ssl/install | 
-[**provision_ssl_certificates**](SSLApi.md#provision_ssl_certificates) | **POST** /ssl/provision | 
+[**generate_sslcsr**](SSLApi.md#generate_sslcsr) | **POST** /ssl/csr/{domain} | Generate SSL CSR
+[**get_ssl_status**](SSLApi.md#get_ssl_status) | **GET** /ssl/status | Get SSL status
+[**install_ssl_certificate**](SSLApi.md#install_ssl_certificate) | **POST** /ssl/install | Install SSL certificate
+[**provision_ssl_certificates**](SSLApi.md#provision_ssl_certificates) | **POST** /ssl/provision | Provision SSL certificates
 
 
 # **generate_sslcsr**
 > str generate_sslcsr(domain, countrycode)
 
+Generate SSL CSR
 
-
-Generate a Certificate Signing Request (CSR) for a domain & country code. 
+Generates a Certificate Signing Request (CSR) for a domain & country code. 
 
 ### Example
 
@@ -51,6 +51,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
 countrycode = 'countrycode_example' # str | 
 
     try:
+        # Generate SSL CSR
         api_response = api_instance.generate_sslcsr(domain, countrycode)
         pprint(api_response)
     except ApiException as e:
@@ -89,9 +90,9 @@ Name | Type | Description  | Notes
 # **get_ssl_status**
 > SSLStatusResponse get_ssl_status()
 
+Get SSL status
 
-
-Retrieve SSL status for all domains.
+Returns the SSL status for all domains.
 
 ### Example
 
@@ -125,6 +126,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.SSLApi(api_client)
     
     try:
+        # Get SSL status
         api_response = api_instance.get_ssl_status()
         pprint(api_response)
     except ApiException as e:
@@ -158,9 +160,9 @@ This endpoint does not need any parameter.
 # **install_ssl_certificate**
 > str install_ssl_certificate(domain, cert, chain)
 
+Install SSL certificate
 
-
-Install a custom certificate. The chain certificate is optional. 
+Installs a custom certificate. The chain certificate is optional. 
 
 ### Example
 
@@ -197,6 +199,7 @@ cert = 'cert_example' # str | TLS/SSL certificate.
 chain = 'chain_example' # str | TLS/SSL intermediate chain (if provided, else empty string).
 
     try:
+        # Install SSL certificate
         api_response = api_instance.install_ssl_certificate(domain, cert, chain)
         pprint(api_response)
     except ApiException as e:
@@ -236,9 +239,9 @@ Name | Type | Description  | Notes
 # **provision_ssl_certificates**
 > SSLCertificatesProvisionResponse provision_ssl_certificates()
 
+Provision SSL certificates
 
-
-Provision certificates for all domains. 
+Provisions certificates for all domains. 
 
 ### Example
 
@@ -272,6 +275,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.SSLApi(api_client)
     
     try:
+        # Provision SSL certificates
         api_response = api_instance.provision_ssl_certificates()
         pprint(api_response)
     except ApiException as e:

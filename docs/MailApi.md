@@ -4,25 +4,25 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_mail_user**](MailApi.md#add_mail_user) | **POST** /mail/users/add | 
-[**add_mail_user_privilege**](MailApi.md#add_mail_user_privilege) | **POST** /mail/users/privileges/add | 
-[**get_mail_aliases**](MailApi.md#get_mail_aliases) | **GET** /mail/aliases | 
-[**get_mail_domains**](MailApi.md#get_mail_domains) | **GET** /mail/domains | 
-[**get_mail_user_privileges**](MailApi.md#get_mail_user_privileges) | **GET** /mail/users/privileges | 
-[**get_mail_users**](MailApi.md#get_mail_users) | **GET** /mail/users | 
-[**remove_mail_alias**](MailApi.md#remove_mail_alias) | **POST** /mail/aliases/remove | 
-[**remove_mail_user**](MailApi.md#remove_mail_user) | **POST** /mail/users/remove | 
-[**remove_mail_user_privilege**](MailApi.md#remove_mail_user_privilege) | **POST** /mail/users/privileges/remove | 
-[**set_mail_user_password**](MailApi.md#set_mail_user_password) | **POST** /mail/users/password | 
-[**upsert_mail_alias**](MailApi.md#upsert_mail_alias) | **POST** /mail/aliases/add | 
+[**add_mail_user**](MailApi.md#add_mail_user) | **POST** /mail/users/add | Add mail user
+[**add_mail_user_privilege**](MailApi.md#add_mail_user_privilege) | **POST** /mail/users/privileges/add | Add mail user privilege
+[**get_mail_aliases**](MailApi.md#get_mail_aliases) | **GET** /mail/aliases | Get mail aliases
+[**get_mail_domains**](MailApi.md#get_mail_domains) | **GET** /mail/domains | Get mail domains
+[**get_mail_user_privileges**](MailApi.md#get_mail_user_privileges) | **GET** /mail/users/privileges | Get mail user privileges
+[**get_mail_users**](MailApi.md#get_mail_users) | **GET** /mail/users | Get mail users
+[**remove_mail_alias**](MailApi.md#remove_mail_alias) | **POST** /mail/aliases/remove | Remove mail alias
+[**remove_mail_user**](MailApi.md#remove_mail_user) | **POST** /mail/users/remove | Remove mail user
+[**remove_mail_user_privilege**](MailApi.md#remove_mail_user_privilege) | **POST** /mail/users/privileges/remove | Remove mail user privilege
+[**set_mail_user_password**](MailApi.md#set_mail_user_password) | **POST** /mail/users/password | Set mail user password
+[**upsert_mail_alias**](MailApi.md#upsert_mail_alias) | **POST** /mail/aliases/add | Upsert mail alias
 
 
 # **add_mail_user**
 > str add_mail_user(email, password, privileges)
 
+Add mail user
 
-
-Add a new mail user.
+Adds a new mail user.
 
 ### Example
 
@@ -59,6 +59,7 @@ password = 'password_example' # str |
 privileges = mailinabox_api.MailUserPrivilege() # MailUserPrivilege | 
 
     try:
+        # Add mail user
         api_response = api_instance.add_mail_user(email, password, privileges)
         pprint(api_response)
     except ApiException as e:
@@ -98,9 +99,9 @@ Name | Type | Description  | Notes
 # **add_mail_user_privilege**
 > str add_mail_user_privilege(email, privilege)
 
+Add mail user privilege
 
-
-Add a privilege to a mail user.
+Adds a privilege to an existing mail user.
 
 ### Example
 
@@ -136,6 +137,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
 privilege = mailinabox_api.MailUserPrivilege() # MailUserPrivilege | 
 
     try:
+        # Add mail user privilege
         api_response = api_instance.add_mail_user_privilege(email, privilege)
         pprint(api_response)
     except ApiException as e:
@@ -174,9 +176,9 @@ Name | Type | Description  | Notes
 # **get_mail_aliases**
 > list[MailAliasByDomain] get_mail_aliases(format=format)
 
+Get mail aliases
 
-
-Retrieve all mail aliases.
+Returns all mail aliases.
 
 ### Example
 
@@ -211,6 +213,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     format = mailinabox_api.MailAliasesResponseFormat() # MailAliasesResponseFormat | The format of the response. (optional)
 
     try:
+        # Get mail aliases
         api_response = api_instance.get_mail_aliases(format=format)
         pprint(api_response)
     except ApiException as e:
@@ -247,9 +250,9 @@ Name | Type | Description  | Notes
 # **get_mail_domains**
 > str get_mail_domains()
 
+Get mail domains
 
-
-Retrieve all mail domains.
+Returns all mail domains.
 
 ### Example
 
@@ -283,6 +286,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.MailApi(api_client)
     
     try:
+        # Get mail domains
         api_response = api_instance.get_mail_domains()
         pprint(api_response)
     except ApiException as e:
@@ -316,9 +320,9 @@ This endpoint does not need any parameter.
 # **get_mail_user_privileges**
 > MailUserPrivilege get_mail_user_privileges(email=email)
 
+Get mail user privileges
 
-
-Retrieve privileges for a user.
+Returns all privileges for an existing mail user.
 
 ### Example
 
@@ -353,6 +357,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     email = 'email_example' # str | The email you want to get privileges for. (optional)
 
     try:
+        # Get mail user privileges
         api_response = api_instance.get_mail_user_privileges(email=email)
         pprint(api_response)
     except ApiException as e:
@@ -389,9 +394,9 @@ Name | Type | Description  | Notes
 # **get_mail_users**
 > MailUsersResponse get_mail_users(format=format)
 
+Get mail users
 
-
-Retrieve all mail users.
+Returns all mail users.
 
 ### Example
 
@@ -426,6 +431,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     format = mailinabox_api.MailUsersResponseFormat() # MailUsersResponseFormat | The format of the response. (optional)
 
     try:
+        # Get mail users
         api_response = api_instance.get_mail_users(format=format)
         pprint(api_response)
     except ApiException as e:
@@ -462,9 +468,9 @@ Name | Type | Description  | Notes
 # **remove_mail_alias**
 > str remove_mail_alias(address)
 
+Remove mail alias
 
-
-Remove a mail alias.
+Removes a mail alias.
 
 ### Example
 
@@ -499,6 +505,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     address = 'address_example' # str | Email format.
 
     try:
+        # Remove mail alias
         api_response = api_instance.remove_mail_alias(address)
         pprint(api_response)
     except ApiException as e:
@@ -536,9 +543,9 @@ Name | Type | Description  | Notes
 # **remove_mail_user**
 > str remove_mail_user(email)
 
+Remove mail user
 
-
-Remove a mail user.
+Removes an existing mail user.
 
 ### Example
 
@@ -573,6 +580,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     email = 'email_example' # str | Email format.
 
     try:
+        # Remove mail user
         api_response = api_instance.remove_mail_user(email)
         pprint(api_response)
     except ApiException as e:
@@ -610,9 +618,9 @@ Name | Type | Description  | Notes
 # **remove_mail_user_privilege**
 > str remove_mail_user_privilege(email, privilege)
 
+Remove mail user privilege
 
-
-Remove a privilege from a mail user.
+Removes a privilege from an existing mail user.
 
 ### Example
 
@@ -648,6 +656,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
 privilege = mailinabox_api.MailUserPrivilege() # MailUserPrivilege | 
 
     try:
+        # Remove mail user privilege
         api_response = api_instance.remove_mail_user_privilege(email, privilege)
         pprint(api_response)
     except ApiException as e:
@@ -686,9 +695,9 @@ Name | Type | Description  | Notes
 # **set_mail_user_password**
 > str set_mail_user_password(email, password)
 
+Set mail user password
 
-
-Set a password for a user.
+Sets a password for an existing mail user.
 
 ### Example
 
@@ -724,6 +733,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
 password = 'password_example' # str | 
 
     try:
+        # Set mail user password
         api_response = api_instance.set_mail_user_password(email, password)
         pprint(api_response)
     except ApiException as e:
@@ -762,9 +772,9 @@ Name | Type | Description  | Notes
 # **upsert_mail_alias**
 > str upsert_mail_alias(update_if_exists, address, forwards_to, permitted_senders)
 
+Upsert mail alias
 
-
-Add or update a mail alias. If updating, you need to set `update_if_exists: 1`. 
+Adds or updates a mail alias. If updating, you need to set `update_if_exists: 1`. 
 
 ### Example
 
@@ -802,6 +812,7 @@ forwards_to = 'forwards_to_example' # str | If adding a regular or catch-all ali
 permitted_senders = 'permitted_senders_example' # str | Mail users that can send mail claiming to be from any address on the alias domain. Multiple address can be separated by newlines or commas.  Leave empty to allow any mail user listed in `forwards_to` to send mail claiming to be from any address on the alias domain. 
 
     try:
+        # Upsert mail alias
         api_response = api_instance.upsert_mail_alias(update_if_exists, address, forwards_to, permitted_senders)
         pprint(api_response)
     except ApiException as e:

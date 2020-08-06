@@ -4,15 +4,15 @@ All URIs are relative to *https://box.example.com/admin*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_me**](UserApi.md#get_me) | **GET** /me | 
+[**get_me**](UserApi.md#get_me) | **GET** /me | Get user information
 
 
 # **get_me**
 > MeResponse get_me()
 
+Get user information
 
-
-Get user information, used for user authentication.  Authenticate a user by supplying the auth token as a base64 encoded string in format `email:password` using basic authentication headers.  If successful, a long-lived `api_key` is returned which can be used for subsequent requests to the API. 
+Returns user information. Used for user authentication.  Authenticate a user by supplying the auth token as a base64 encoded string in format `email:password` using basic authentication headers.  If successful, a long-lived `api_key` is returned which can be used for subsequent requests to the API. 
 
 ### Example
 
@@ -46,6 +46,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.UserApi(api_client)
     
     try:
+        # Get user information
         api_response = api_instance.get_me()
         pprint(api_response)
     except ApiException as e:
