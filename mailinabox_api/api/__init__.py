@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 # import apis into api package
 from mailinabox_api.api.dns_api import DNSApi
+from mailinabox_api.api.mfa_api import MFAApi
 from mailinabox_api.api.mail_api import MailApi
 from mailinabox_api.api.ssl_api import SSLApi
 from mailinabox_api.api.system_api import SystemApi

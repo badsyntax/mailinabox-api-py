@@ -4,8 +4,8 @@
 
 Python client SDK for the Mail-in-a-Box API.
 
-- API version: 0.47.0
-- Package version: 0.47.0
+- API version: 0.51.0
+- Package version: 0.51.0
 
 https://pypi.org/project/mailinabox-api
 
@@ -80,7 +80,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mailinabox_api.DNSApi(api_client)
     qname = 'qname_example' # str | DNS query name.
-    body = 'body_example' # str | The value of the DNS record.
+    body = 1.2.3.4 # str | 
 
     try:
         # Add DNS custom A record
@@ -105,12 +105,16 @@ Class | Method | HTTP request | Description
 *DNSApi* | [**get_dns_custom_records_for_q_name_and_type**](docs/DNSApi.md#get_dns_custom_records_for_q_name_and_type) | **GET** /dns/custom/{qname}/{rtype} | Get DNS custom records
 *DNSApi* | [**get_dns_dump**](docs/DNSApi.md#get_dns_dump) | **GET** /dns/dump | Get DNS dump
 *DNSApi* | [**get_dns_secondary_nameserver**](docs/DNSApi.md#get_dns_secondary_nameserver) | **GET** /dns/secondary-nameserver | Get DNS secondary nameserver
+*DNSApi* | [**get_dns_zonefile**](docs/DNSApi.md#get_dns_zonefile) | **GET** /dns/zonefile/{zone} | Get DNS zonefile
 *DNSApi* | [**get_dns_zones**](docs/DNSApi.md#get_dns_zones) | **GET** /dns/zones | Get DNS zones
 *DNSApi* | [**remove_dns_custom_a_record**](docs/DNSApi.md#remove_dns_custom_a_record) | **DELETE** /dns/custom/{qname} | Remove DNS custom A record
 *DNSApi* | [**remove_dns_custom_record**](docs/DNSApi.md#remove_dns_custom_record) | **DELETE** /dns/custom/{qname}/{rtype} | Remove DNS custom record
 *DNSApi* | [**update_dns**](docs/DNSApi.md#update_dns) | **POST** /dns/update | Update DNS
 *DNSApi* | [**update_dns_custom_a_record**](docs/DNSApi.md#update_dns_custom_a_record) | **PUT** /dns/custom/{qname} | Update DNS custom A record
 *DNSApi* | [**update_dns_custom_record**](docs/DNSApi.md#update_dns_custom_record) | **PUT** /dns/custom/{qname}/{rtype} | Update DNS custom record
+*MFAApi* | [**mfa_status**](docs/MFAApi.md#mfa_status) | **POST** /mfa/status | Retrieve MFA status for you or another user
+*MFAApi* | [**mfa_totp_disable**](docs/MFAApi.md#mfa_totp_disable) | **POST** /mfa/disable | Disable multi-factor authentication for you or another user
+*MFAApi* | [**mfa_totp_enable**](docs/MFAApi.md#mfa_totp_enable) | **POST** /mfa/totp/enable | Enable TOTP authentication
 *MailApi* | [**add_mail_user**](docs/MailApi.md#add_mail_user) | **POST** /mail/users/add | Add mail user
 *MailApi* | [**add_mail_user_privilege**](docs/MailApi.md#add_mail_user_privilege) | **POST** /mail/users/privileges/add | Add mail user privilege
 *MailApi* | [**get_mail_aliases**](docs/MailApi.md#get_mail_aliases) | **GET** /mail/aliases | Get mail aliases
@@ -174,6 +178,11 @@ Class | Method | HTTP request | Description
  - [MailUsersResponseFormat](docs/MailUsersResponseFormat.md)
  - [MeAuthStatus](docs/MeAuthStatus.md)
  - [MeResponse](docs/MeResponse.md)
+ - [MfaDisableRequest](docs/MfaDisableRequest.md)
+ - [MfaEnableRequest](docs/MfaEnableRequest.md)
+ - [MfaStatusResponse](docs/MfaStatusResponse.md)
+ - [MfaStatusResponseEnabledMfa](docs/MfaStatusResponseEnabledMfa.md)
+ - [MfaStatusResponseNewMfa](docs/MfaStatusResponseNewMfa.md)
  - [SSLCSRGenerateRequest](docs/SSLCSRGenerateRequest.md)
  - [SSLCertificateInstallRequest](docs/SSLCertificateInstallRequest.md)
  - [SSLCertificatesProvisionResponse](docs/SSLCertificatesProvisionResponse.md)

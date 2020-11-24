@@ -804,7 +804,7 @@ This endpoint does not need any parameter.
 
 Update system privacy
 
-Updates system privacy (new-version) check status.  Request:    - `value: private`: Disable new version checks   - `value: off`: Enable new version checks 
+Updates system privacy (new-version checks).  Request:    - `value: private`: Disable new version checks   - `value: off`: Enable new version checks 
 
 ### Example
 

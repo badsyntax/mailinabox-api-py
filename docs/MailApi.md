@@ -808,7 +808,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.MailApi(api_client)
     update_if_exists = 56 # int | Set to `1` when updating an alias.
 address = 'address_example' # str | Email format.
-forwards_to = 'forwards_to_example' # str | If adding a regular or catch-all alias, the format needs to be `email1@example.com`. Multiple address can be separated by newlines or commas.  If adding a domain alias, the format needs to be `@example.com`. 
+forwards_to = 'forwards_to_example' # str | If adding a regular or catch-all alias, the format needs to be `user@example.com`. Multiple address can be separated by newlines or commas.  If adding a domain alias, the format needs to be `@example.com`. 
 permitted_senders = 'permitted_senders_example' # str | Mail users that can send mail claiming to be from any address on the alias domain. Multiple address can be separated by newlines or commas.  Leave empty to allow any mail user listed in `forwards_to` to send mail claiming to be from any address on the alias domain. 
 
     try:
@@ -825,7 +825,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_if_exists** | **int**| Set to &#x60;1&#x60; when updating an alias. | 
  **address** | [**str**](str.md)| Email format. | 
- **forwards_to** | **str**| If adding a regular or catch-all alias, the format needs to be &#x60;email1@example.com&#x60;. Multiple address can be separated by newlines or commas.  If adding a domain alias, the format needs to be &#x60;@example.com&#x60;.  | 
+ **forwards_to** | **str**| If adding a regular or catch-all alias, the format needs to be &#x60;user@example.com&#x60;. Multiple address can be separated by newlines or commas.  If adding a domain alias, the format needs to be &#x60;@example.com&#x60;.  | 
  **permitted_senders** | **str**| Mail users that can send mail claiming to be from any address on the alias domain. Multiple address can be separated by newlines or commas.  Leave empty to allow any mail user listed in &#x60;forwards_to&#x60; to send mail claiming to be from any address on the alias domain.  | 
 
 ### Return type

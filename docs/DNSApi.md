@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_dns_custom_records_for_q_name_and_type**](DNSApi.md#get_dns_custom_records_for_q_name_and_type) | **GET** /dns/custom/{qname}/{rtype} | Get DNS custom records
 [**get_dns_dump**](DNSApi.md#get_dns_dump) | **GET** /dns/dump | Get DNS dump
 [**get_dns_secondary_nameserver**](DNSApi.md#get_dns_secondary_nameserver) | **GET** /dns/secondary-nameserver | Get DNS secondary nameserver
+[**get_dns_zonefile**](DNSApi.md#get_dns_zonefile) | **GET** /dns/zonefile/{zone} | Get DNS zonefile
 [**get_dns_zones**](DNSApi.md#get_dns_zones) | **GET** /dns/zones | Get DNS zones
 [**remove_dns_custom_a_record**](DNSApi.md#remove_dns_custom_a_record) | **DELETE** /dns/custom/{qname} | Remove DNS custom A record
 [**remove_dns_custom_record**](DNSApi.md#remove_dns_custom_record) | **DELETE** /dns/custom/{qname}/{rtype} | Remove DNS custom record
@@ -58,7 +59,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mailinabox_api.DNSApi(api_client)
     qname = 'qname_example' # str | DNS query name.
-body = 'body_example' # str | The value of the DNS record.
+body = 1.2.3.4 # str | 
 
     try:
         # Add DNS custom A record
@@ -73,7 +74,7 @@ body = 'body_example' # str | The value of the DNS record.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **qname** | **str**| DNS query name. | 
- **body** | **str**| The value of the DNS record. | 
+ **body** | **str**|  | 
 
 ### Return type
 
@@ -136,7 +137,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.DNSApi(api_client)
     qname = 'qname_example' # str | DNS record query name
 rtype = mailinabox_api.DNSRecordType() # DNSRecordType | Record type
-body = 'body_example' # str | The value of the DNS record.
+body = 1.2.3.4 # str | 
 
     try:
         # Add DNS custom record
@@ -152,7 +153,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **qname** | **str**| DNS record query name | 
  **rtype** | [**DNSRecordType**](.md)| Record type | 
- **body** | **str**| The value of the DNS record. | 
+ **body** | **str**|  | 
 
 ### Return type
 
@@ -611,6 +612,80 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_dns_zonefile**
+> str get_dns_zonefile(zone)
+
+Get DNS zonefile
+
+Returns a DNS zone file for a hostname.
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+from __future__ import print_function
+import time
+import mailinabox_api
+from mailinabox_api.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to https://box.example.com/admin
+# See configuration.py for a list of all supported configuration parameters.
+configuration = mailinabox_api.Configuration(
+    host = "https://box.example.com/admin"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = mailinabox_api.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with mailinabox_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = mailinabox_api.DNSApi(api_client)
+    zone = 'zone_example' # str | Hostname
+
+    try:
+        # Get DNS zonefile
+        api_response = api_instance.get_dns_zonefile(zone)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling DNSApi->get_dns_zonefile: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **zone** | **str**| Hostname | 
+
+### Return type
+
+**str**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/html
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_dns_zones**
 > DNSZonesResponse get_dns_zones()
 
@@ -719,7 +794,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mailinabox_api.DNSApi(api_client)
     qname = 'qname_example' # str | DNS query name.
-body = 'body_example' # str | The value of the DNS record.
+body = 1.2.3.4 # str | 
 
     try:
         # Remove DNS custom A record
@@ -734,7 +809,7 @@ body = 'body_example' # str | The value of the DNS record.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **qname** | **str**| DNS query name. | 
- **body** | **str**| The value of the DNS record. | 
+ **body** | **str**|  | 
 
 ### Return type
 
@@ -797,7 +872,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.DNSApi(api_client)
     qname = 'qname_example' # str | DNS record query name
 rtype = mailinabox_api.DNSRecordType() # DNSRecordType | Record type
-body = 'body_example' # str | The value of the DNS record.
+body = 1.2.3.4 # str | 
 
     try:
         # Remove DNS custom record
@@ -813,7 +888,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **qname** | **str**| DNS record query name | 
  **rtype** | [**DNSRecordType**](.md)| Record type | 
- **body** | **str**| The value of the DNS record. | 
+ **body** | **str**|  | 
 
 ### Return type
 
@@ -950,7 +1025,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = mailinabox_api.DNSApi(api_client)
     qname = 'qname_example' # str | DNS query name.
-body = 'body_example' # str | The value of the DNS record.
+body = 1.2.3.4 # str | 
 
     try:
         # Update DNS custom A record
@@ -965,7 +1040,7 @@ body = 'body_example' # str | The value of the DNS record.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **qname** | **str**| DNS query name. | 
- **body** | **str**| The value of the DNS record. | 
+ **body** | **str**|  | 
 
 ### Return type
 
@@ -1028,7 +1103,7 @@ with mailinabox_api.ApiClient(configuration) as api_client:
     api_instance = mailinabox_api.DNSApi(api_client)
     qname = 'qname_example' # str | DNS record query name
 rtype = mailinabox_api.DNSRecordType() # DNSRecordType | Record type
-body = 'body_example' # str | The value of the DNS record.
+body = 1.2.3.4 # str | 
 
     try:
         # Update DNS custom record
@@ -1044,7 +1119,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **qname** | **str**| DNS record query name | 
  **rtype** | [**DNSRecordType**](.md)| Record type | 
- **body** | **str**| The value of the DNS record. | 
+ **body** | **str**|  | 
 
 ### Return type
 
