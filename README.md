@@ -5,7 +5,7 @@
 Python client SDK for the Mail-in-a-Box API.
 
 - API version: 0.51.0
-- Package version: 0.51.0
+- Package version: 0.51.1
 
 https://pypi.org/project/mailinabox-api
 
